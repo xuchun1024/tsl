@@ -1,0 +1,185 @@
+@charset "UTF-8";
+body{
+	background-image: url(../images/BG.gif);
+	background-repeat: no-repeat;
+	}
+#header{
+	background-image: url(../images/head-BG.gif);
+	background-repeat: repeat-x;
+	opacity: 0.7;
+  	position: absolute;
+  	top: -2px;
+  	width: 100%;
+  	height: 80px;
+  	z-index: 4;
+	}
+ #logo{
+  position: absolute;
+  left: 300px;
+  top: 25px;
+  width: 394px;
+  height: 33px;
+  z-index: 7;
+}
+#login{
+	font-size: 18px;
+	font-family: "Lantinghei SC";
+	color: rgb(64, 74, 88);
+	position: absolute;
+	left: 1000px;
+	top: 30px;
+	z-index: 8;
+	width:200px;
+	height:20px;
+}
+#in{
+	padding-left: 30px;
+	margin-left: 30px;
+	}
+#com{
+	padding-left: 30px;
+	margin-left: 30px;
+	}
+#in:hover{
+	color:black;
+	}
+#com:hover{
+	color:black;
+	}
+#slogen{
+  font-size: 42px;
+  font-family: "Heiti";
+  color: rgb(255, 255, 255);
+  width:450px;
+  height:50px;
+  line-height: 0.583;
+  text-shadow: 2.5px 4.33px 5px rgba(0, 0, 0, 0.294);
+  position: absolute;
+  left: 510px;
+  top: 250px;
+  z-index: 9;
+}
+#toDo{
+  font-size: 40px;
+  font-family: "Lantinghei SC";
+  color: rgb(255, 255, 255);
+  line-height: 0.583;
+  -moz-transform: matrix( 0.55464780675329,0,0,0.55907431315492,0,0);
+  -webkit-transform: matrix( 0.55464780675329,0,0,0.55907431315492,0,0);
+  -ms-transform: matrix( 0.55464780675329,0,0,0.55907431315492,0,0);
+  position: absolute;
+  left: 470px;
+  top: 325px;
+  z-index: 24;
+  width:220px;
+  height:40px;
+}
+#tagSay{
+	width: 500px;
+	height: 60px;
+	position: absolute;
+	top: 400px;
+	left: 480px;
+	border-radius: 4px;
+  background-color: rgb(251, 251, 251);
+  opacity: 0.7;
+  box-shadow: 0.5px 0.866px 3px 0px rgba(0, 0, 0, 0.173), inset 1px 1.732px 0px 0px rgba(255, 255, 255, 0.114);
+}
+.note1{
+	width: 100px;
+	height: 38px;
+	float: left;
+	TEXT-ALIGN: center;
+	padding-top:22px;
+	}
+#tagS1:hover{
+	background-color: rgb(46,131,114);
+	color:rgba(255,255,255,1.00);
+	}
+#tagS2:hover{
+	background-color: rgb(46,131,114);
+	color:rgba(255,255,255,1.00);
+	}
+#tagS3:hover{
+	background-color: rgb(46,131,114);
+	color:rgba(255,255,255,1.00);
+	}
+#tagS4:hover{
+	background-color: rgb(46,131,114);
+	color:rgba(255,255,255,1.00);
+	}
+#tagS5:hover{
+	background-color: rgb(46,131,114);
+	color:rgba(255,255,255,1.00);
+	}
+#textfield{
+	border: 2px solid rgba(46,131,114,1.00);
+	position: absolute;
+	left: 620px;
+	top: 322px;
+	height: 30px;
+	width: 300px;
+	background-color: hsla(0,0%,0%,0.00);
+	font-size: 16px;
+	color: hsla(0,0%,100%,1.00);	
+  }
+#logout{
+	font-size: 18px;
+	font-family: "Lantinghei SC";
+	color: rgb(64, 74, 88);
+	position: absolute;
+	left: 1000px;
+	top: 30px;
+	z-index: 8;
+	width:200px;
+	height:20px;
+	display:none;
+	  }
+#out{
+	padding-left: 30px;
+	margin-left: 30px;
+	}
+#welcom{
+	padding-left: 30px;
+	margin-left: 30px;
+	}
+#out:hover{
+	color:black;
+	}
+#footer{
+	position: absolute;
+	top:700px;
+	}
+#taskStart{
+	position: absolute;
+	left: 883px;
+	top: 325px;
+	height: 30px;
+	width: 40px;
+	background-color: rgba(46,131,114,1.00);
+	color: white;
+	border-style: none;
+	}
+ #talkBoxin{
+	color: white;
+	position: absolute;
+	left: 1060px;
+	top: 100px;
+	width: 140px;
+	height: 200px;
+	z-index: 11;
+	display:none;
+	 }
+#textfield2{
+	margin-bottom: 30px;
+		}
+#password{
+	margin-bottom: 30px;
+	}
+#signIn{
+	height: 30px;
+	width: 50px;
+	background-color: rgba(4,57,123,1.00);
+	color: white;
+	border-style: none;
+	}

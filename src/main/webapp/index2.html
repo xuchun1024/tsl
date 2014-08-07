@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link href="main.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="JS/jquery.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="JS/main.js" charset="UTF-8"></script>
+  <link href="CSS/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="boss" id="boss">
+<div class="base" id="header">
+	<div class="structure" id=logo>
+    	<img src="images/logo-words.gif" width="394" height="33" alt=""/>
+    </div>
+  <div class="structure" id="login">
+    	<label class="content" id="in">登入</label>
+     	<label class="content" id="com">注册</label>
+      </div>
+		<div class="structure" id="talkBoxin">
+     	  	<label for="textfield2">账号:</label>
+          	<input type="text" name="textfield2" id="textfield2">   
+   	  		<label for="password">密码:</label>
+        	<input type="password" name="password" id="password">
+            <input type="button" name="button" id="signIn" value="登录">
+    </div>
+    <div class="structure" id=logout>
+    	欢迎你，<label class="content" id="welcome">Emma</label>
+    	<label class="content" id="out">登出</label>
+    </div>
+</div>
+<div class="base" id="mainFrame"> 
+  <div class="structure" id="slogen">
+  专业治疗拖延症30亿年
+  </div>   
+  <form class="structure" id="task" action="createtask.html" method="get">
+   	<label class="content" id="toDo">立刻开始：</label>
+    <input type="text" name="textfield" id="textfield">
+    <input type="submit" name="button" id="taskStart" value="Start">
+  <div class="content" id="tagSay">
+        	<div class="note1" id="tagS1" onclick="tagClick('我决定要背100个单词')">背单词</div>
+          	<div class="note1" id="tagS2" onclick="tagClick('我决定要上两小时自习')">上自习</div>
+          	<div class="note1" id="tagS3" onclick="tagClick('我决定要做两小时运动')">做运动</div>
+          	<div class="note1" id="tagS4" onclick="tagClick('我决定要听一百遍听力')">练听力</div>
+          	<div class="note1" id="tagS5" onclick="tagClick('我决定要写3篇IEEE')">写论文</div>
+	</div>
+</form>
+</div>
+<footer class="base" id="footer">拖斯拉&copy;2014 </footer>
+</body>
+</html>
