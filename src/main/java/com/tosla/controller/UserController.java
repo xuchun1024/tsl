@@ -38,10 +38,10 @@ public class UserController {
         user1.setPassword("123456");
 
         User user2 = new User();
-        user1.setId(2);
-        user1.setAddTime(new Date());
-        user1.setName("千字");
-        user1.setPassword("123456");
+        user2.setId(2);
+        user2.setAddTime(new Date());
+        user2.setName("千字");
+        user2.setPassword("123456");
 
         userList.add(user1);
         userList.add(user2);
