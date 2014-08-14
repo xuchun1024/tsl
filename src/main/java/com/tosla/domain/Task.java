@@ -6,6 +6,7 @@
 package com.tosla.domain;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * 任务实体
@@ -20,6 +21,9 @@ public class Task {
     String content;
     Date deadline;
     Integer ownerId;
+    Integer checkerId;
+    Integer status;
+    List<Integer> tagIds;
 
     public Integer getId() {
         return id;
@@ -59,5 +63,29 @@ public class Task {
 
     public void setOwnerId(Integer ownerId) {
         this.ownerId = ownerId;
+    }
+
+    public Integer getCheckerId() {
+        return checkerId;
+    }
+
+    public void setCheckerId(Integer checkerId) {
+        this.checkerId = checkerId;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public List<Integer> getTagIds() {
+        return tagIds;
+    }
+
+    public void setTagIds(List<Integer> tagIds) {
+        this.tagIds = tagIds;
     }
 }

@@ -5,6 +5,11 @@
  */
 package com.tosla.domain;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 import java.util.Date;
 
 /**
@@ -14,11 +19,17 @@ import java.util.Date;
  * @version 1.0
  * @created 2014-08-11
  */
+@Document(collection = "users")
 public class User {
-    Integer id;
-    String name;
-    String password;
-    Date addTime;
+    @Id
+    private Integer id;
+    private String name;
+    private String email;
+    private String mobile;
+    private String password;
+    @DateTimeFormat(iso = ISO.DATE_TIME)
+    private Date addTime;
+    private Integer status;
 
     public Integer getId() {
         return id;
@@ -36,6 +47,22 @@ public class User {
         this.name = name;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -50,5 +77,13 @@ public class User {
 
     public void setAddTime(Date addTime) {
         this.addTime = addTime;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

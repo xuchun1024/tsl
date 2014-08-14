@@ -6,12 +6,14 @@
 package com.tosla.controller;
 
 import com.tosla.domain.User;
+import com.tosla.service.UserService;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -26,6 +28,9 @@ import java.util.List;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+
+    @Resource
+    private UserService userService;
 
     @RequestMapping(method = RequestMethod.GET,produces= MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
@@ -45,6 +50,7 @@ public class UserController {
 
         userList.add(user1);
         userList.add(user2);
+        userService.printName();
         return userList;
     }
 }
