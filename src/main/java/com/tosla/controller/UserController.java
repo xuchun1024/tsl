@@ -57,7 +57,7 @@ public class UserController {
 
     @RequestMapping(value = "/{id}",method = RequestMethod.GET,produces= MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public Object getUser(@PathVariable String id) {
+    public Object getUser(@PathVariable Integer id) {
 
 
         List<User> userList = new ArrayList<User>();
