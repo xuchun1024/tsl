@@ -6,7 +6,6 @@
 package com.tosla.task;
 
 import com.tosla.service.UserService;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -25,13 +24,13 @@ public class DemoTask {
     @Resource
     private UserService userService;
 
-    @Scheduled(fixedRate = 300000)
+    //@Scheduled(fixedRate = 3000000)
     void doSomethingWithRate() {
         userService.printName();
         System.out.println("I'm doing with rate now!" + (new Date()));
     }
 
-    @Scheduled(cron = "* 0/5 * * * *")
+    //@Scheduled(cron = "* 0/5 * * * *")
     void doSomethingWith() {
         System.out.println("I'm doing with cron now!" + (new Date()));
     }

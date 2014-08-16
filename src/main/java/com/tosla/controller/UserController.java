@@ -9,10 +9,7 @@ import com.tosla.domain.User;
 import com.tosla.service.UserService;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
@@ -34,7 +31,9 @@ public class UserController {
 
     private Map<Integer,User> userMap;
 
-    @RequestMapping(value = "/all",method = RequestMethod.GET,produces= MediaType.APPLICATION_JSON_VALUE)
+
+
+    @RequestMapping(value = "/all",method = RequestMethod.GET)
     @ResponseBody
     public Object getAllUsers(HttpServletResponse response) {
 
@@ -87,4 +86,16 @@ public class UserController {
 
         return userMap.get(id);
     }
+
+    @RequestMapping(value = "/save", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public Object saveUser(@RequestBody User user, HttpServletResponse response) {
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        System.out.println(user.getName());
+        userMap = new HashMap<Integer, User>();
+        userMap.put(user.getId(), user);
+        return userMap.get(user.getId());
+    }
+
+
 }
