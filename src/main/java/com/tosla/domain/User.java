@@ -31,6 +31,10 @@ public class User {
     private Date addTime;
     private Integer status;
 
+    public String toString() {
+        return "User[id=" + id + ",name=" + name + ",email=" + email + ",mobile=" + mobile + ",password=" + password + ",addTime=" + addTime + ",status=" + status + "]";
+    }
+
     public Integer getId() {
         return id;
     }
@@ -86,4 +90,6 @@ public class User {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+
 }
