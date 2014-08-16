@@ -32,7 +32,7 @@ public class UserController {
     @Resource
     private UserService userService;
 
-    @RequestMapping(method = RequestMethod.GET,produces= MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/all",method = RequestMethod.GET,produces= MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Object getAllUsers() {
         List<User> userList = new ArrayList<User>();
