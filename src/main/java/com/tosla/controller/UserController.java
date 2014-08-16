@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import java.util.*;
 
 /**
@@ -35,7 +36,9 @@ public class UserController {
 
     @RequestMapping(value = "/all",method = RequestMethod.GET,produces= MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public Object getAllUsers() {
+    public Object getAllUsers(HttpServletResponse response) {
+
+        response.setHeader("Access-Control-Allow-Origin","*");
         List<User> userList = new ArrayList<User>();
         User user1 = new User();
         user1.setId(1);
@@ -57,8 +60,9 @@ public class UserController {
 
     @RequestMapping(value = "/{id}",method = RequestMethod.GET,produces= MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public Object getUser(@PathVariable Integer id) {
+    public Object getUser(@PathVariable Integer id, HttpServletResponse response) {
 
+        response.setHeader("Access-Control-Allow-Origin","*");
 
         List<User> userList = new ArrayList<User>();
         User user1 = new User();
