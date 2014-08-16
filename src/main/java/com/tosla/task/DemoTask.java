@@ -25,13 +25,13 @@ public class DemoTask {
     @Resource
     private UserService userService;
 
-    @Scheduled(fixedRate = 3000)
+    @Scheduled(fixedRate = 300000)
     void doSomethingWithRate() {
         userService.printName();
         System.out.println("I'm doing with rate now!" + (new Date()));
     }
 
-    @Scheduled(cron = "0/5 * * * * *")
+    @Scheduled(cron = "* 0/5 * * * *")
     void doSomethingWith() {
         System.out.println("I'm doing with cron now!" + (new Date()));
     }
