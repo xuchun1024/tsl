@@ -57,7 +57,7 @@ public class UserController {
         return userList;
     }
 
-    @RequestMapping(value = "/{id}",method = RequestMethod.GET,produces= MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/{id}",method = RequestMethod.GET)
     @ResponseBody
     public Object getUser(@PathVariable Integer id, HttpServletResponse response) {
 
@@ -87,7 +87,7 @@ public class UserController {
         return userMap.get(id);
     }
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/save", method = RequestMethod.POST,consumes= MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Object saveUser(@RequestBody User user, HttpServletResponse response) {
         response.setHeader("Access-Control-Allow-Origin", "*");
