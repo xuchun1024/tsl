@@ -152,4 +152,56 @@ $(document).ready(function(){
 
 });
 
+function postData(){
+    var requestStr = {  
+            reqStr:  'test parameter'  
+    };  
+    var request = {   
+            requestId: 'asdfasdfa',  
+            sessionId: 'asdfasdfasdf',  
+            userName: 'Jeremy',  
+            password:'123',  
+            request: requestStr  
+    };  
+    //调用了jquery.json 库  
+    var encoded = "{ id: 1, name: \"拉风少年\", email: null, mobile: null, password: \"123456\", addTime: 1408174347799, status: null }"//$.toJSON( request );  
+    var jsonStr = encoded;  
+    var actionStr = $("#actionPath").val();  
+    $.ajax({  
+        url : "http://211.155.86.32:8081/tosla/user/save",  
+        type : 'POST',  
+        data : jsonStr,  
+        dataType : 'json',  
+        //contentType : 'application/json',  
+        success : function(data, status, xhr) {  
+//         Do Anything After get Return data  
+//          $.each(data.payload, function(index){  
+//              $("#result").append("</br>" + data.payload[index].beanStr);  
+//          });  
+        },  
+        Error : function(xhr, error, exception) {  
+            // handle the error.    
+            alert(exception.toString());  
+        }  
+    });  
+}  
 
+
+function saveUser()
+{
+	var url='http://211.155.86.32:8081/tosla/user/save';
+    $.ajax(
+		{
+		url : url,
+		type : "POST", 
+		dataType:"json",
+		contentType:'application/json;charset=UTF-8',
+		data:JSON.stringify({id:'1',name:'咩哈哈',password:'test',lastIp:'',lastVisit:'1986-05-27'}),
+		success : function(data) {
+			alert(data.name);   
+			},
+		error:function(e){
+			alert("err");   
+			} 
+		});
+}

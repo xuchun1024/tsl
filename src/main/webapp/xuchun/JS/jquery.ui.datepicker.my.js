@@ -119,7 +119,7 @@ function get_ftimes() {
 			defaultDate : null, // Used when field is blank: actual date,
 			// +/-number for offset from today, null for today
 			appendText : '', // Display text following the input box, e.g. showing the format
-			buttonText : '重复', // Text for trigger button
+			buttonText : '选择任务Deadline', // Text for trigger button
 			buttonImage : '', // URL for trigger button image
 			buttonImageOnly : false, // True if the image appears alone, false if it appears on a button
 			hideIfNoPrevNext : false, // True to hide next/previous month links
@@ -2122,7 +2122,13 @@ $(function() {
 });
 
 function print_datenum() {
-	$('#datenum').html('总天数：<font color="red">' + date_arr.length + '</font>天');
+	$('#datenum').html(date_arr.length);
+	// 徐纯于2014加入的内容
+	changeSum();
+
+
+
+	//
 }
 
 
@@ -2247,4 +2253,3 @@ function modify_date() {
 		}, "json");
 	}
 }
-
