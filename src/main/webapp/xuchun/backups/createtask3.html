@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>CreateTask</title>
+	<link rel="stylesheet" href="css/jqueryui/jquery.ui.all.css">
+	<script src="js/jquery-1.4.4.min.js"></script>
+	<script src="js/jquery-ui-1.8.10.custom.min.js"></script>
+	<script src="js/jquery.ui.datepicker.my.js"></script>
+	<script src="JS/createtask.js"></script>
+	<style type="text/css">
+	*{margin:0;padding:0;font-size:12px;}
+	</style>
+</head>
+<body>
+
+
+
+
+<fieldset  id="task_1">
+	<legend id="taskDetail">艾玛要背1100个单词</legend>
+		监督人：<select>
+			<option>张三</option>
+			<option>李四</option>
+		</select>
+		<br/>
+		<input id='datepicker_input' type='text' style=' width:1px; height:1px; border:0px;'>
+		
+		金额：<input id="task_1_amount" onChange="changeSum()" onkeyup="value=value.replace(/[^\0-9]/g,'')"></input>
+		<span style="margin-right: 50px;">总天数：<font color="red"> <label id="datenum"> 0 </label></font>天</span>
+		总金额<label id="amount_sum">不可用</label>
+		<br/>
+		<span  id="datepicker"></span>
+		已选定的deadline：<label id="testDate"></label>
+
+		<br/>
+		<span id="showdates">checkdates</span> 
+		<div border="1" background="yellow" id="dates"><label id="testDate2"></label></div>
+
+</fieldset>
+<button onclick="postTask()" disabled id="postTast">发布任务</button>
+<br/>
+<br/>
+<textarea name="timelist" id="timelist" style="width: 170px;height: 200px;"  readonly="readonly" display="false">暂无选定的日期</textarea>
+<button onclick="getJSON()">测试用获取json按钮</button>
+</div>
+</body>
+</html>
+
+

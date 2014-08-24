@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link href="main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="boss" id="boss">
+<div class="base" id="header">
+	<div class="structure" id=logo>
+    	<img src="images/logo-words.gif" width="394" height="33" alt=""/>
+    </div>
+  <div class="structure" id="login">
+    	<label class="content" id="in">登入</label>
+     	<label class="content" id="com">注册</label>
+      </div>
+		<div class="structure" id="talkBoxin">
+     	  	<label for="textfield2">账号:</label>
+          	<input type="text" name="textfield2" id="textfield2">   
+   	  		<label for="password">密码:</label>
+        	<input type="password" name="password" id="password">
+            <input type="button" name="button" id="signIn" value="登录">
+    </div>
+    <div class="structure" id=logout>
+    	欢迎你，<label class="content" id="welcome">Emma</label>
+    	<label class="content" id="out">登出</label>
+    </div>
+</div>
+<div class="base" id="mainFrame"> 
+  <div class="structure" id="slogen">
+  专业治疗拖延症30亿年
+  </div>   
+  <div class="structure" id="task">
+   	<label class="content" id="toDo">立刻开始：</label>
+    <input type="text" name="textfield" id="textfield">
+    <input type="button" name="button" id="taskStart" value="Start">
+  <div class="content" id="tagSay">
+        	<div class="note1" id="tagS1" >背单词</div>
+          	<div class="note1" id="tagS2" >上自习</div>
+          	<div class="note1" id="tagS3" >做运动</div>
+          	<div class="note1" id="tagS4" >练听力</div>
+          	<div class="note1" id="tagS5" >写论文</div>
+	</div>
+</div>
+</div>
+<footer class="base" id="footer">这里是脚注</footer>
+</body>
+</html>

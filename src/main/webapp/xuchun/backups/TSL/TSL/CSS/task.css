@@ -1,0 +1,100 @@
+@charset "UTF-8";
+#up{
+  background-image: url(images/up-BG.gif);
+  position: absolute;
+  left:-10px;
+  top:-5px;
+  width: 101%;
+  height: 60%;
+  z-index: 2;
+}
+#userName{
+	position:absolute;
+	left:400px;
+	top:50px;
+	width:450px;
+	height:30px;
+	color:white;
+	}
+#isDoing{
+	float:left;
+	}
+#taskCon{
+	position: absolute;
+	left: 400px;
+	top: 100px;
+	width: 620px;
+	height: 250px;
+	color: white;
+	background-color: rgba(0,0,0,0.00);
+	}
+#textfield{
+	width: 250px;
+	background-color: hsla(0,0%,0%,0.00);
+	border: thick none rgba(75,182,156,1.00);
+	border: 2px solid rgba(46,131,114,1.00);
+	height: 30px;
+	background-color: hsla(0,0%,0%,0.00);
+	font-size: 16px;
+	color: hsla(0,0%,100%,1.00);	
+	}
+#deadLine{
+	height:20px;
+	width:300px;
+	margin-top: 20px;
+	float: left;
+	}
+#payMent{
+	height:20px;
+	width:300px;
+	float: right;
+	margin-top: 20px;
+}
+#spend{
+	position:absolute;
+	top:270px;}
+#down{
+	position:absolute;
+	top:450px;
+	right:500px;
+	}
+#totalPay{
+	font-size: 70px;
+	color: rgb(75, 182, 156);
+}
+#payCurrency{
+	font-size: 40px;
+ 	color: rgb(176, 176, 176);
+	}
+#goPay{
+	position: absolute;
+	width: 245px;
+	height: 40px;
+	z-index: 6;
+	background-color: rgba(75,182,156,1.00);
+	font-size:30px;
+	color:white;
+}
+#goPay:hover{
+	background-color: rgba(80,200,180,1.00);
+	}
+#checkOut{
+	float: right;
+	margin-top: 3px;
+	margin-right: 10px;	
+	}
+#textfield3{
+	width: 30px;
+	border-color: rgba(0,0,0,0.00) rgba(0,0,0,0.00) rgba(75,182,156,1.00);
+	background-color: rgba(0,0,0,0.00);
+	}
+#textfield4{
+	border-color: rgba(0,0,0,0.00) rgba(0,0,0,0.00) rgba(75,182,156,1.00);
+	background-color: rgba(0,0,0,0.00);
+	}
+#repeat{
+	position:absolute;
+	left:510px;
+	top:10px;
+	display:none;
+	}
