@@ -79,7 +79,7 @@ function get_ftimes() {
 		// The name of the inline marker class
 		this._appendClass = 'ui-datepicker-append';
 		// The name of the append marker class
-		this._triggerClass = 'ui-datepicker-trigger';
+		this._triggerClass = 'btn btn-primary btn-next';
 		// The name of the trigger marker class
 		this._dialogClass = 'ui-datepicker-dialog';
 		// The name of the dialog marker class
@@ -119,7 +119,7 @@ function get_ftimes() {
 			defaultDate : null, // Used when field is blank: actual date,
 			// +/-number for offset from today, null for today
 			appendText : '', // Display text following the input box, e.g. showing the format
-			buttonText : '选择任务Deadline', // Text for trigger button
+			buttonText : '选择截止日期', // Text for trigger button
 			buttonImage : '', // URL for trigger button image
 			buttonImageOnly : false, // True if the image appears alone, false if it appears on a button
 			hideIfNoPrevNext : false, // True to hide next/previous month links
@@ -139,7 +139,7 @@ function get_ftimes() {
 			shortYearCutoff : '+10', // Short year values < this are in the current century,
 			// > this are in the previous century,
 			// string value starting with '+' for current year + value
-			minDate : null, // The earliest selectable date, or null for no limit
+			minDate : 0, // The earliest selectable date, or null for no limit
 			maxDate : null, // The latest selectable date, or null for no limit
 			duration : 'fast', // Duration of display/closure
 			beforeShowDay : null, // Function that takes a date and returns an array with
@@ -2125,9 +2125,6 @@ function print_datenum() {
 	$('#datenum').html(date_arr.length);
 	// 徐纯于2014加入的内容
 	changeSum();
-
-
-
 	//
 }
 
