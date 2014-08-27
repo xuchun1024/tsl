@@ -1,10 +1,10 @@
 @charset "UTF-8";
 body{
-	background-image: url(../images/BG.gif);
+	background-image: url(../img/BG.gif);
 	background-repeat: no-repeat;
 	}
 #header{
-	background-image: url(../images/head-BG.gif);
+	background-image: url(../img/head-BG.gif);
 	background-repeat: repeat-x;
 	opacity: 0.7;
   	position: absolute;

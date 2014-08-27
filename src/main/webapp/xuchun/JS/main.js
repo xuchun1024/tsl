@@ -144,9 +144,9 @@ function enableForum(forumTitles)
 $(document).ready(function(){
 	$("#in").click(function()//点击登入显示变化
 	{
-		$("#login").hide();
-		$("#logout").show();
-		$("#welcome").text(JSONObject.name);
+		$("#login").slideToggle();
+		//$("#logout").show();
+		//$("#welcome").text(JSONObject.name);
 		enableForum(fts);
 	});
 
