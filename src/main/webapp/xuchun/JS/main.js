@@ -141,16 +141,7 @@ function enableForum(forumTitles)
 }
 
 
-$(document).ready(function(){
-	$("#in").click(function()//点击登入显示变化
-	{
-		$("#login").slideToggle();
-		//$("#logout").show();
-		//$("#welcome").text(JSONObject.name);
-		enableForum(fts);
-	});
 
-});
 
 function postData(){
     var requestStr = {  
@@ -205,3 +196,38 @@ function saveUser()
 			} 
 		});
 }
+
+$(document).ready(function(){
+	$("#in").click(function()//点击登入显示变化
+	{
+		$(".regbox").hide();
+		$("#talkBoxin").fadeToggle();
+		//$("#logout").show();
+		//$("#welcome").text(JSONObject.name);
+		enableForum(fts);
+	});
+	$("#regButton").click(function()//点击登入显示变化
+	{
+		$(".regbox").hide();
+		$("#register").fadeToggle();
+	});
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
