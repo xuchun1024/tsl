@@ -1,12 +1,11 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
-<link href="main.css" rel="stylesheet" type="text/css">
-  <script type="text/javascript" src="JS/jquery.js" charset="UTF-8"></script>
-  <script type="text/javascript" src="JS/main.js" charset="UTF-8"></script>
-  <link href="CSS/main.css" rel="stylesheet" type="text/css">
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <script type="text/javascript" src="JS/jquery.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="JS/main.js" charset="UTF-8"></script>
+    <link href="CSS/main.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -15,25 +14,30 @@
       <div class="structure" id="logo">
         <img src="img/logo-words.gif" width="394" height="33" alt=""/>
       </div>
-      <div class="structure" id="login">
+      <div class="header_right structure" id="login_div">
         <label class="topLabel" id="in">登入</label>
      	  <label class="topLabel" id="regButton">注册</label>
       </div>
 		  <div class="regbox" id="talkBoxin">
-        账号:<input type="text" name="textfield2" id="textfield2">   
-   	  	密码:<input type="password" name="password" id="password">
-        <input type="button" name="button" id="signIn" value="登录">
+        邮箱:<input type="text"     class="input" name="idInput_login"  id="emailInput_login">   
+   	  	密码:<input type="password" class="input" name="password_login" id="password_login">
+        <button class="button" type="button" name="login_button" id="login_button" value="登录">登陆</button>
       </div>
+      
       <div class="regbox" id="register">
-        账号:<input type="text" name="textfield2" id="textfield2">
-        邮箱:<input type="text" name="textfield2" id="textfield2">   
-        密码:<input type="password" name="password" id="password">
-        <input type="button" name="button" id="signIn" value="注册">
+        昵称:<input type="text" class="input" name="idInput_reg" id="idInput_reg">
+        邮箱:<input type="text" class="input" name="emailInput_reg" id="emailInput_reg">   
+        密码:<input type="password"  class="input" name="password_reg" id="password_reg">
+        <button class="button" type="button" name="reg_button" id="reg_button" value="注册">注册</button>
       </div>
-      <div class="structure" id=logout>
-    	   欢迎你，<label class="content" id="welcome">Emma</label>
-    	   <label class="content" id="out">登出</label>
+
+      <div class="header_right structure" id="personalInfo">
+    	   <img src="img/tosslar.gif" class="avatar">
+         <a class="header_text" id="userName" href="dashboard.html">Emma</a>
+    	   <a href="index.html?action=logout">登出</a>
       </div>
+
+
     </div>
     <div class="base" id="mainFrame"> 
       <div class="structure" id="slogen">

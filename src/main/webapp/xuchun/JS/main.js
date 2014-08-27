@@ -1,59 +1,5 @@
 "use strict";
 
-  setInterval("load()", 1000);
-
-  function load()
-  {
-	  var date1 = new Date();
-	  var min = date1.getMinutes();
-	  var sec = date1.getSeconds();
-	  var hh, mm, ss;
-	  if (sec == 0)
-	  {
-		  if (min == 0)
-		  {
-			  hh = 24 - date1.getHours();
-			  mm = 0;
-			  ss = 0;
-		  }
-		  else
-		  {
-			  hh = 23 - date1.getHours();
-			  mm = 60 - date1.getMinutes();
-			  ss = 0;
-		  }
-	  }
-	  else
-	  {
-		  if (min == 0)
-		  {
-			  hh = 23 - date1.getHours();
-			  mm = 59;
-			  ss = 60 - sec;
-		  }
-		  else
-		  {
-			  hh = 23 - date1.getHours();
-			  mm = 59 - date1.getMinutes();
-			  ss = 60 - sec;
-		  }
-	  }
-
-	  document.getElementById("hh").innerHTML = printf("%02d",hh);
-	  document.getElementById("mm").innerHTML = printf("%02d",mm);;
-	  document.getElementById("ss").innerHTML = printf("%02d",ss);;
-}
-
-function printf(){
-     var as=[].slice.call(arguments),fmt=as.shift(),i=0;
-  return     fmt.replace(/%(\w)?(\d)?([dfsx])/ig,function(_,a,b,c){
-          var s=b?new Array(b-0+1).join(a||''):'';
-          if(c=='d') s+=parseInt(as[i++]);
-          return b?s.slice(b*-1):s;
-     })
-}
-
-
 //----------------------JSON 运作-------------------------------------------------------------------
 var JSONObject= {
 "name":"Bill Gates",
@@ -68,76 +14,10 @@ var fts = {
   ]
 }
 
-
-/*
-function setInfo()
-{
-	document.getElementById("login").style.display = "none";
-	document.getElementById("logout").style.display = "block";
-	document.getElementById("in").innerHTML = "欢迎" + JSONObject.name;
-	document.getElementById("reg").innerHTML = "<a href src=''>注销<\/a>";
-//	document.getElementsByTagName("reg")[0].setAttribute("a","button");
-
-	var textile = '<div>%s需要在%s之前完成%s</div>';
-	var forumTree = document.creatElement("ul");
-
-	for (var f in forumTitles.forumTitle)
-	{
-		var ff = forumTitles.forumTitle[f];
-		var task = document.creatElement("li");
-		switch (ff.status)
-		{
-			case 0: //进行中
-				var 
-				document.getElementById("plazaSay").innerHTML = ("<div>" + forumTitles.forumTitle[f].Holder + "需要在" + forumTitles.forumTitle[f].Deadline + "之前完成" + forumTitles.forumTitle[f].Title) + document.getElementById("plazaSay").innerHTML;
-				break;
-			case 1://已完成
-				document.getElementById("plazaSay").innerHTML = ("<div>" + forumTitles.forumTitle[f].Holder + "已经" + forumTitles.forumTitle[f].Deadline + "之前完成" + forumTitles.forumTitle[f].Title) + document.getElementById("plazaSay").innerHTML;
-				break;
-			case 2: //已失败
-				document.getElementById("plazaSay").innerHTML = ("<div>" + forumTitles.forumTitle[f].Holder + "放弃啦" + forumTitles.forumTitle[f].Deadline + "之前完成" + forumTitles.forumTitle[f].Title) + document.getElementById("plazaSay").innerHTML;
-				break;
-			default:
-				document.getElementById("plazaSay").innerHTML = ("<div>" + forumTitles.forumTitle[f].Holder + "需要在" + forumTitles.forumTitle[f].Deadline + "之前完成" + forumTitles.forumTitle[f].Title) + document.getElementById("plazaSay").innerHTML;
-		}
-		
-
-	}
-}
-*/
 function tagClick(tag)
 {
 	document.getElementById("textfield").value = document.getElementById("textfield").value + tag;
 	document.getElementById("textfield").focus();
-}
-
-function enableForum(forumTitles)
-{
-	var textile = '<div>%s需要在%s之前完成%s</div>';
-	var forumTree = document.createElement("ul");
-
-	for (var f in forumTitles.forumTitle)
-	{
-		var ff = forumTitles.forumTitle[f];
-		var taskLi = document.createElement("li");
-		switch (ff.status)
-		{
-			case 0: //进行中
-				taskLi.innerHTML = ff.Holder + "需要在" + ff.Deadline + "之前完成" + ff.Title;	
-				break;
-			case 1://已完成
-				taskLi.innerHTML = ff.Holder + "已经完成" + ff.Title;
-				break;
-			case 2: //已失败
-				taskLi.innerHTML = ff.Holder + "已经像个拖延猪一样地失败了"
-				break;
-			default:
-				;
-		}
-		forumTree.appendChild(taskLi);
-
-	}
-	document.getElementById("plazaSay").appendChild(forumTree);
 }
 
 
@@ -197,19 +77,67 @@ function saveUser()
 		});
 }
 
+///根据输入框里的账号密码获取用户信息。返回包含用户信息的JSON对象。
+//userName : 输入框里的用户名
+//psd: 输入框里的密码
+//return: JSON形式的用户信息
+///这部分要等服务端通信功能写完之后再完成
+function loginHandler(userName, psd)
+{
+	var userObj= {
+		"name":"Bill Gates",
+		"age":56,
+		"phone":"555 1234567"};
+	return userObj;
+}
+
+function registerHandler(userName, email, psd)
+{
+	var userObj= {
+		"name":userName,
+		"email":email,
+		"phone":"555 1234567"};
+	return userObj;
+}
+
 $(document).ready(function(){
+	$(".regbox").opacity=1;
 	$("#in").click(function()//点击登入显示变化
 	{
-		$(".regbox").hide();
+		$("#register").hide();
 		$("#talkBoxin").fadeToggle();
-		//$("#logout").show();
-		//$("#welcome").text(JSONObject.name);
-		enableForum(fts);
+		$("#emailInput_login").focus();
+
 	});
-	$("#regButton").click(function()//点击登入显示变化
+	$("#regButton").click(function()//点击注册显示变化
 	{
-		$(".regbox").hide();
+		$("#talkBoxin").hide();
 		$("#register").fadeToggle();
+		$("#idInput_reg").focus();
+	});
+
+	$("#login_button").click(function(){
+		var userObj;
+		userObj = loginHandler($("#idInput_login").val(), $("#password_login").val());
+		if (typeof userObj == "object")
+		{
+			$(".regbox").fadeOut();
+			$("#login_div").hide();
+			$("#personalInfo").show();
+			$("#userName").text(userObj.name)
+		}
+	});
+
+	$("#reg_button").click(function(){
+		var userObj;
+		userObj = registerHandler($("#idInput_reg").val(), $("#email_reg").val(), $("#password_reg").val());
+		if (typeof userObj == "object")
+		{
+			$(".regbox").fadeOut();
+			$("#login_div").hide();
+			$("#personalInfo").show();
+			$("#userName").text(userObj.name)
+		}
 	});
 
 });
