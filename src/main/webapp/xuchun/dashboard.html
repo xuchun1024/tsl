@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Dashboard</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="拖斯拉, Tosslar">
+        <link rel="stylesheet" href="css/jqueryui/jquery.ui.all.css">
+        <script src="js/jquery-1.4.4.min.js"></script>
+        <script src="js/jquery-ui-1.8.10.custom.min.js"></script>
+        <script src="js/jquery.ui.datepicker.my.js"></script>
+        <script src="js/dashboard.js"></script>
+        <style>
+#hh{
+    color: rgba(4,44,106,1.00);
+    font-weight: 500;
+    font-size: 120px;
+    }
+#mm{
+    color: rgba(73,113,176,1.00);
+    font-size: 120px;
+    font-weight: 500;
+    }
+#ss{
+    color: rgba(143,178,233,1.00);
+    font-size: 120px;
+    font-weight: 500;
+    }
+#maohao1{
+    color: rgba(4,44,106,1.00);
+    font-weight: 500;
+    font-size: 120px;
+    }
+#maohao2{
+    color: rgba(73,113,176,1.00);
+    font-size: 120px;
+    font-weight: 500;
+    }
+        </style>
+    </head>
+    <body>
+        <div style="text-aligh:center;">
+        <div class="header">
+            <div class="headerlinks" style="float:right; width:100%">
+                <label style = "float:right; padding-right:20px"><a href="#">登出</a> </label>
+            </div>
+            <hr/>
+        </div>
+            <fieldset>
+                <legend>用户信息</legend>
+                <img src="img/tosslar.gif" style="float:left;"/>
+                <ul style="float:left">
+                    <li>用户名：张三</li>
+                    <li>可用余额: 300</li>
+                    <li>待完成任务额：500</li>
+                    <li>总资产：800</li>
+                </ul>
+            </fieldset>
+            <div>
+                <h2>距离今天结束还有:</h2>
+                <div class="base" id="timeNumber" style="width:100%;border-style: solid; border-width: 1px;">
+                    <label class="time" id="hh">00</label> 
+                    <label class="maohao" id="maohao1" >:</label>
+                    <label class="time" id="mm" >00</label>
+                    <label class="maohao" id="maohao2" >:</label>
+                    <label class="time" id="ss" >00</label>   
+                </div>
+            </div>
+            <fieldset>
+                <legend>任务信息</legend>
+                <ul style="float:left">待完成任务
+                    <li>背1100个单词--<font color="green">进行中 3/10</font>  <a href="#">完成</a> <a href="#">放弃</a></li>
+                    <li>跑一百公里--<font color="green">进行中 3/10</font> <a href="#">完成</a> <a href="#">放弃</a></li>
+                    <li>阅读100页--<font color="orange">延误1次  3/10</font> <a href="#">完成</a> <a href="#">放弃</a></li>
+                </ul>
+                <ul style="float:left">已完成任务
+                    <li>背一百个单词--<font color="green">全部完成</font></li>
+                    <li>跑10公里--<font color="red">9/10完成</font></li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>上传证据</legend>
+                <form method="post">
+                    请选择您要上传的文件<input type="file"/><br/>
+                    <input type="submit" />
+                </form>
+            </fieldset>
+        </div>
+    </div>
+    </body>
+</html>
