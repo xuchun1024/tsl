@@ -254,11 +254,14 @@ $(document).ready(function(){
 	$("#chargeSubmit").click(function(){
 		var chargeObj = {
 			charger : user.id,
-			cardCode: $("#cardCode").val();
+			cardCode: $("#cardCode").val()
 		}
 		var chargeJSON = JSON.stringify(chargeObj);
 		alert(chargeJSON)
+	});
 
+	$(".chargeTri").click(function(){
+		$("#chargeLayer").show();
 	});
 	// ===================test
 	
