@@ -141,10 +141,10 @@ function installConfirmPage(o)
 	$("#amountSum").text(o.amountSum);
 
 	$("#balanceSpan").text(user.balance);
-	if (user.balance < o.amountSum){
-		$("#payQ").hide();
-		$("#chargeButton").show();
-	}
+	// if (user.balance < o.amountSum){
+	// 	$("#payQ").disabled();
+	// 	$("#chargeButton").show();
+	// }
 
 }
 
@@ -257,11 +257,15 @@ $(document).ready(function(){
 			cardCode: $("#cardCode").val()
 		}
 		var chargeJSON = JSON.stringify(chargeObj);
-		alert(chargeJSON)
+		alert(chargeJSON);
 	});
 
 	$(".chargeTri").click(function(){
 		$("#chargeLayer").show();
+	});
+
+	$("#clearCardCode").click(function(){
+		$("#cardCode").val("");
 	});
 	// ===================test
 	

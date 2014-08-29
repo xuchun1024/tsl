@@ -164,7 +164,7 @@
                         <input type="checkbox" id="agreeMe"  class="required" name="agreeMe">我同意</input><br/>
                         <input type="button" text="" id="modifyButton" value="返回修改">
                         <button id="addTXB">增加拖星币</button>
-                        <input type="button" id="chargeButton" value="充值" style="display:none">
+                        <input type="button" id="chargeButton" class="chargeTri" value="充值">
                         <input type="button" id="payQ" value="支付">
                     </form>
                 </fieldset>
@@ -187,14 +187,15 @@
                     <button id="payLater">认怂，不继续了</button><button id="payNow">确定！支付！！</button>
                 </div>
             </div>
-            <div id="chargeLayer" style="display:none">
-                <form id="chargeForm" method="post">
-                    卡密：
-                    <input id="cardCode" type="text" /><br/>
-                    请直接从淘宝那里复制过来，<br/>
-                    充值失败3次的话，会被禁止哦。<br/>
-                    <input type="reset" value="重置"><button id="chargeSubmit">充值</button>
-                </form>
+            <div class="interactions">
+                <fieldset id="chargeLayer" style="display:none">
+                    <legend>充值</legend>
+                        卡密：
+                        <input id="cardCode" type="text" /><br/>
+                        请直接从淘宝那里复制过来，<br/>
+                        充值失败3次的话，会被禁止哦。<br/>
+                        <button id="clearCardCode">重置</button><button id="chargeSubmit">充值</button>
+                </fieldset>
             </div>
         </div>
     </body>
