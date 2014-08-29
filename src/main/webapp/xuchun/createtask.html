@@ -104,8 +104,7 @@
                     </div>
                 </div>
             </div>
-            <div id="clothLayer" class="layer interactions">
-                
+            <div id="clothLayer" class="layer interactions"> 
             </div>
             <div id="reassure" class="manuX interactions">
                 <fieldset>
@@ -114,11 +113,11 @@
                         <fieldset style="float:left;width:100px">
                             <legend>监督人</legend>
                             <img src="img/xueba.jpg" width="100px"/><br/>
-                            <span id="supervisor">猴小喵</span><br/>
+                            <span id="supervisorName">猴小喵</span><br/>
                         </fieldset>
                         <fieldset style="float:left;width:210px;height:140px">
                             <legend>详情</legend>
-                            <span id="taskDetail" >我每天要很努力地背诵一百个单词</span>
+                            <span id="taskDetailShowSpan" >我每天要很努力地背诵一百个单词</span>
                         </fieldset>
                     </div>
                     <div style="float:left;width:100%">
@@ -156,10 +155,16 @@
 
                         购买拖星币：<a href="">淘宝</a><br/>
                         已经购买了？为拖星币<a href="">充值</a><br/>
-                        账户余额：300拖星币 本次消耗：100拖星币<br/>
+                        账户余额：
+                        <span id="balanceSpan">0</span>
+                        拖星币
+                        本次消耗：
+                        <span id="amountSum">0</span>
+                        拖星币<br/>
                         <input type="checkbox" id="agreeMe"  class="required" name="agreeMe">我同意</input><br/>
                         <input type="button" text="" id="modifyButton" value="返回修改">
                         <button id="addTXB">增加拖星币</button>
+                        <input type="button" id="chargeButton" value="充值" style="display:none">
                         <input type="button" id="payQ" value="支付">
                     </form>
                 </fieldset>
@@ -181,6 +186,15 @@
                     绝！对！不！会！退！钱！的！<br/>
                     <button id="payLater">认怂，不继续了</button><button id="payNow">确定！支付！！</button>
                 </div>
+            </div>
+            <div id="chargeLayer">
+                <form id="chargeForm" method="post">
+                    卡密：
+                    <input id="cardCode" type="text" /><br/>
+                    请直接从淘宝那里复制过来，<br/>
+                    充值失败3次的话，会被禁止哦。<br/>
+                    <input type="reset" value="重置"><button id="chargeSubmit">充值</button>
+                </form>
             </div>
         </div>
     </body>

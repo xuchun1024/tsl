@@ -1,6 +1,10 @@
 "use strict";
 var datess;
-
+var user = {
+	id : 10001,
+	name: "矮小猴",
+	balance: 30,
+}
 function getJSON()
 {
 	var xmlHttp = new XMLHttpRequest();
@@ -92,8 +96,8 @@ function by(value1, value2)
 	}
 }
 
-////生成任务返回JSON
-function postTask()
+////生成任务的Obj
+function createMission()
 {
 	var taskList = new Array();
 	for (var i=0; i < datess.length; i++)
@@ -101,17 +105,48 @@ function postTask()
 		var task = new Object();
 		task.name = $("#taskName").val();
 		task.detail = $("#taskDetail").val();
-		task.date = datess[i];
+		task.date = new Date(datess[i]);
 		task.amount = parseInt(document.getElementById("spend").value);
 		task.supervisor = $("#supervisor").val();
 		taskList.push(task);
 	}
 
-
 	taskList.sort(by);
-	var taskJSON = JSON.stringify(taskList);
-	return taskJSON;
+	var missionObj = {
+
+		holder: user.id,
+		missionName: taskList[0].name,
+		createTime: new Date(),
+		beginTime: taskList[0].date,
+		endTime: taskList[taskList.length-1].date,
+		tasks : taskList,
+		amountSum : taskList[0].amount * taskList.length,
+	}
+
+	return missionObj;
 }	
+
+function installConfirmPage(o)
+{
+	$("#taskTitle").text(o.holder + "'s " + o.missionName + "计划");
+	$("#supervisorName").text(o.tasks[0].supervisor);
+	$("#taskDetailShowSpan").text(o.tasks[0].detail);
+
+	var deadlineString ="";
+	for (var i=0; i < o.tasks.length; i++)
+	{
+		deadlineString += "<li class=\"deadlineLi\" style=\"float:left;list-style:none;padding-right:10px\">" + o.tasks[i].date.getFullYear() + "年" + String(o.tasks[i].date.getMonth()+1) + "月" + String(o.tasks[i].date.getDate()+1)+ "日</li>"
+	}
+	$("#deadlines").html(deadlineString);
+	$("#amountSum").text(o.amountSum);
+
+	$("#balanceSpan").text(user.balance);
+	if (user.balance < o.amountSum){
+		$("#payQ").hide();
+		$("#chargeButton").show();
+	}
+
+}
 
 $(document).ready(function(){
 	
@@ -184,7 +219,9 @@ $(document).ready(function(){
 				alert("ok");
 		}
 		*/
-		var o = postTask();
+
+		var o = createMission();
+		installConfirmPage(o);
 		//window.location.href = "checkout.html?json=" + o;
 		$("#clothLayer").show();
 		$("#reassure").show();
@@ -213,7 +250,16 @@ $(document).ready(function(){
 		$("#confirm").hide();
 	});
 
+	///点击充值
+	$("#chargeSubmit").click(function(){
+		var chargeObj = {
+			charger : user.id,
+			cardCode: $("#cardCode").val();
+		}
+		var chargeJSON = JSON.stringify(chargeObj);
+		alert(chargeJSON)
 
+	});
 	// ===================test
 	
 });
