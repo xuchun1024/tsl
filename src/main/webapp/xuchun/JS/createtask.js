@@ -15,33 +15,20 @@ function getJSON()
         }
 	xmlHttp.send(null);
 
-var JSONObject= {
-"name":"Bill Gates",
-"age":56,
-"phone":"555 1234567"};
+	var JSONObject= {
+	"name":"Bill Gates",
+	"age":56,
+	"phone":"555 1234567"};
 
-return JSONObject;
-
+	return JSONObject;
 }
 
 function postJSON()
 {
 	
-
 }
 
-
-function postTask()
-{
-	for (var f in datess)
-	{
-		var task = new JSONObject();
-		task.name = document.getElementById("taskDetail").innerText;
-		task.date = datess[f];
-		alert(task.name);
-	}
-}
-
+///根据输入的日期和金额计算总额度
 function changeSum()
 {
 	var amount_sum = parseInt(document.getElementById("datenum").innerText) * parseInt(document.getElementById("spend").value);
@@ -74,20 +61,165 @@ function changeSum()
 	document.getElementById("deadlineDatelist").innerHTML = date_arr;
 }
 
-function changePrice()
+///传递数据至服务端
+function postTaskHandler()
+{
+	var taskObj = {
+		"name" : 1
+	};
+	//if success
+
+	//if not login
+	//taskObj.err = "not user";
+
+	//if not connected
+	//taskObj.err = "no connection"
+	return taskObj;
+}
+
+function creatJSON()
 {
 
 }
+function by(value1, value2)
+{
+	if (value1.date > value2.date){
+		return 1;
+	} else if (value1.date > value2.date){
+		return	-1;
+	} else {
+		return 0;
+	}
+}
+
+////生成任务返回JSON
+function postTask()
+{
+	var taskList = new Array();
+	for (var i=0; i < datess.length; i++)
+	{
+		var task = new Object();
+		task.name = $("#taskName").val();
+		task.detail = $("#taskDetail").val();
+		task.date = datess[i];
+		task.amount = parseInt(document.getElementById("spend").value);
+		task.supervisor = $("#supervisor").val();
+		taskList.push(task);
+	}
+
+
+	taskList.sort(by);
+	var taskJSON = JSON.stringify(taskList);
+	return taskJSON;
+}	
 
 $(document).ready(function(){
-  $("#times").click(function(){
-	  $("#deadlineDatelist").slideToggle("slow");
-  });
+	
+	$("#times").click(function(){
+		$("#deadlineDatelist").slideToggle("slow");
+	});
 
-  $("#timeDetail").hide();
-  $("#times").hide();
-  $("#deadlineDatelist").hide();
+	$("#timeDetail").hide();
+	$("#times").hide();
+	$("#deadlineDatelist").hide();
+
+
+	///============================ 按钮处理区 ===========分隔符要长====================
+
+	///点击保存按钮
+	$("#saveTask").click(function(){
+		alert("学霸说，保存你妹啊。别拖了，赶紧开始！！");
+		var tg = $(event.target);
+		$("#saveTask").attr("disabled","true");
+		$(tg).unbind("click");
+	});
+
+	///点击增加拖星币
+	$("#addTXB").click(function(){
+		alert("学霸说没用，懒得做");
+		var tg = $(event.target);
+		tg.attr("disabled","true");
+		$(tg).unbind("click");
+	});
+
+	///点击返回修改
+	$("#modifyButton").click(function(){
+		$("#noModification").show();
+
+	});
+	///确认修改
+	$("#modifyAssured").click(function(){
+		$(".interactions").hide();
+	});
+	///不修改
+	$("#noModifyAssured").click(function(){
+		$("#noModification").hide();
+	});
+
+	///点击发布任务的按钮
+	$("#postTast").click(function(){
+		var tg = event.target;
+		//校验数据是否合理的东西
+		if (!(parseInt(document.getElementById("datenum").innerText) >0))
+		{
+			alert("至少约定7天");
+			return;
+		}
+		if (!(parseInt(document.getElementById("spend").value) > 9))
+		{
+			alert("喂喂！10块都不到，哪来的约束力？");
+			return;
+		};
+
+		//// 去远端传递数据
+		/*var taskObj = postTaskHandler();
+		switch (taskObj.err) {
+			case "not user":
+				alert("no user")
+			break;
+			case "no connection":
+				alert("no connection")
+			break;
+			default: 
+				alert("ok");
+		}
+		*/
+		var o = postTask();
+		//window.location.href = "checkout.html?json=" + o;
+		$("#clothLayer").show();
+		$("#reassure").show();
+	});
+
+	///点击支付按钮
+	$("#payQ").click(function(){
+		
+		//$("#payCheck").validate();
+		if ($("#agreeMe").attr("checked") == true){
+			$("#confirm").show();	
+		} else {
+			alert("请同意，同意框要点上啊");
+		}
+
+		
+	});
+
+	///点击真的支付
+	$("#payNow").click(function(){
+		window.location.href="checkout.html";
+	});
+
+	///点击认怂
+	$("#payLater").click(function(){
+		$("#confirm").hide();
+	});
+
+
+	// ===================test
+	
 });
+
+
+
 
 
 

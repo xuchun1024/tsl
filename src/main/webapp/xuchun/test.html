@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>CreateTask</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="拖斯拉, Tosslar">
+        <link rel="stylesheet" type="text/css" href="css/base.min.css">
+        <link rel="stylesheet" type="text/css" href="css/shopCart.min.css">
+        <link rel="stylesheet" href="css/jqueryui/jquery.ui.all.css">
+        <link rel="stylesheet" href="css/createTask.css">
+        <script src="js/jquery-1.4.4.min.js"></script>
+        <script src="js/jquery-ui-1.8.10.custom.min.js"></script>
+        <script src="js/jquery.ui.datepicker.my.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="JS/createtask.js"></script>
+    </head>
+    <body>
+        <div>
+            <form id="customerForm" runat="server"> 
+<div> 
+First Name: <input type="text" id="FirstName" class="required" name="FirstName" /> 
+Last Name: <input type="text" id="LastName" class="required" name="LastName" /> 
+<input type="checkbox" id="agree" class="required" name="agree"/>
+
+<input type="submit" value="Register" /> 
+</div> 
+</form> 
+        </div>
+    </body>
+
+</html>
+<script language="javascript" type="text/javascript"> 
+$("#customerForm").validate( 
+{ 
+rules: 
+{ 
+FirstName: { required:true }, 
+LastName: { required:true }, 
+Countries: { validateCountries:true } 
+}, 
+messages: 
+{ 
+FirstName: { required: "First Name is required" }, 
+LastName: { required: "Last Name is required" }, 
+Countries: { validateCountries:"Please select at least 2 items from the Countries" } 
+}, 
+
+}); 
+// add the validate countries method 
+jQuery.validator.addMethod("validateCountries", function(value, element) 
+{ 
+var noOfSelectedCountries = $("#Countries :selected").length; 
+if(noOfSelectedCountries < 2) return false; 
+return true; 
+});  
+</script> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -8,98 +8,198 @@
         <link rel="stylesheet" type="text/css" href="css/base.min.css">
         <link rel="stylesheet" type="text/css" href="css/shopCart.min.css">
         <link rel="stylesheet" href="css/jqueryui/jquery.ui.all.css">
+        <link rel="stylesheet" href="css/createTask.css">
         <script src="js/jquery-1.4.4.min.js"></script>
         <script src="js/jquery-ui-1.8.10.custom.min.js"></script>
         <script src="js/jquery.ui.datepicker.my.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
         <script src="JS/createtask.js"></script>
     </head>
     <body>
-        <div class="site-header site-mini-header container">
-            <div class="span4">
-              <div class="site-logo">
-                  <img src="img/logo-words.png" width="400" height="60" alt=""/>    
-              </div>
-            </div>
-        </div>
-        <!-- .site-mini-header END -->
-        <div class="container">
-        <!--S cart-->
-            <div id="shopCartBox">
-                <div class="shop-cart-box">
-                    <div class="shop-cart-box-hd">
-                        <h2 class="title">
-                            <label id="userName">Emma</label>
-                            正在创建任务:
-                            <input type="text" name="textfield" id="taskName" value="背100个单词"> 
-                        </h2>
-                    </div>
-                    <div class="shop-cart-box-bd">
-                    <!--  购物车商品列表 -->
-                    <dl class="shop-cart-goods">
-                        <dt class="clearfix">
-                            <span class="col col-1">任务描述</span>
-                            <span class="col col-2">单次投入</span>
-                            <span class="col col-3">重复次数</span>
-                            <span class="col col-4">小计</span>
-                            <span class="col col-5">监督人</span>
-                        </dt>
-                        <dd class="item  clearfix J_proItem" data-cos="0" data-commodityid="1142000007">
-                            <div class="item-row">
-                                <div class="col col-1">
-                                    <div class="g-pic">
-                                        <a href="http://www.mi.com/item/1142000007" target="_blank"><img alt="" src="img/怪兽.gif" srcset="http://img08.mifile.cn/v1/MI_18455B3E4DA706226CF7535A58E875F0267/T1t4__ByVT1RXrhCrK.jpg?width=240&amp;height=240 2x" width="139" height="72"></a>
-                                    </div>
-                                    <div class="g-info">
-                                        <div class="g-name">
-                                            <a target="_blank">
-                                                <label for="taskDetail">任务描述:</label>
-                                                <textarea name="textarea" id="taskDetail"></textarea>
-                                            </a>
-                                        </div>
-                                        <div class="g-detail clearfix">
-                                            <input id='datepicker_input' type='text' style=' width:1px; height:1px; border:0px;'>
-                                            <span  id="datepicker"></span>
-                                            <br/>
-                                            <span id="timeDetail">当前任务的截止日期：2014-08-30</span>
-                                            <a id="times">
-                                                当前任务的截止日期共选择了<span id="sumDays">3</span>天
-                                                ▼
-                                            </a>
-                                            <div id="deadlineDatelist">2014-08-30</div>                                        
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col col-2">
-                                    <input type="text" id="spend" onChange="changeSum()" onkeyup="value=value.replace(/[^\d]/g,'')">
-                                </div>
-                                <div class="col col-3"> 
-                                    <div class="change-goods-num clearfix J_changeGoodsNum">
-                                        <span id="datenum">0</span>
-                                    </div>
-                                </div>
-                                <div class="col col-4">
-                                    <em id="amount_sum">0</em><br/>拖星币
-                                </div>
-                                <div class="col col-5">
-                                    <select name="select" id="supervise">
-                                        <option>张三</option>
-                                        <option>李四</option>
-                                    </select>        
-                                </div>
-                            </div>
-                        </dd>
-                    </dl>
+        <div>
+            <div class="site-header site-mini-header container">
+                <div class="span4">
+                  <div class="site-logo">
+                      <img src="img/logo-words.png" width="400" height="60" alt=""/>    
+                  </div>
                 </div>
-                <div class="shop-cart-box-ft clearfix">
-                    <div class="shop-cart-total">
-                        <p class="total-price">任务总额：<strong><span id="totalAmount">0.00</span></strong>拖星币</p>
+            </div>
+            <!-- .site-mini-header END -->
+            <div class="container">
+            <!--S cart-->
+                <div id="shopCartBox">
+                    <div class="shop-cart-box">
+                        <div class="shop-cart-box-hd">
+                            <h2 class="title">
+                                <label id="userName">Emma</label>
+                                正在创建任务:
+                                <input type="text" name="textfield" id="taskName" value="背100个单词"> 
+                            </h2>
+                        </div>
+                        <div class="shop-cart-box-bd">
+                        <!--  购物车商品列表 -->
+                        <dl class="shop-cart-goods">
+                            <dt class="clearfix">
+                                <span class="col col-1">任务描述</span>
+                                <span class="col col-2">单次投入</span>
+                                <span class="col col-3">重复次数</span>
+                                <span class="col col-4">小计</span>
+                                <span class="col col-5">监督人</span>
+                            </dt>
+                            <dd class="item  clearfix J_proItem" data-cos="0" data-commodityid="1142000007">
+                                <div class="item-row">
+                                    <div class="col col-1">
+                                        <div class="g-pic">
+                                            <a href="http://www.mi.com/item/1142000007" target="_blank"><img alt="" src="img/怪兽.gif" srcset="http://img08.mifile.cn/v1/MI_18455B3E4DA706226CF7535A58E875F0267/T1t4__ByVT1RXrhCrK.jpg?width=240&amp;height=240 2x" width="139" height="72"></a>
+                                        </div>
+                                        <div class="g-info">
+                                            <div class="g-name">
+                                                <a target="_blank">
+                                                    <label for="taskDetail">任务描述:</label>
+                                                    <textarea name="textarea" id="taskDetail">请输入任务描述</textarea>
+                                                </a>
+                                            </div>
+                                            <div class="g-detail clearfix">
+                                                <input id='datepicker_input' type='text' style=' width:1px; height:1px; border:0px;'>
+                                                <span  id="datepicker"></span>
+                                                <br/>
+                                                <span id="timeDetail">当前任务的截止日期：2014-08-30</span>
+                                                <a id="times">
+                                                    当前任务的截止日期共选择了<span id="sumDays">3</span>天
+                                                    ▼
+                                                </a>
+                                                <div id="deadlineDatelist">2014-08-30</div>                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col col-2">
+                                        <input type="text" id="spend" onChange="changeSum()" onkeyup="value=value.replace(/[^\d]/g,'')" value="10">
+                                    </div>
+                                    <div class="col col-3"> 
+                                        <div class="change-goods-num clearfix J_changeGoodsNum">
+                                            <span id="datenum">0</span>
+                                        </div>
+                                    </div>
+                                    <div class="col col-4">
+                                        <em id="amount_sum">0</em><br/>拖星币
+                                    </div>
+                                    <div class="col col-5">
+                                        <select name="select" id="supervisor">
+                                            <option>学霸</option>
+                                            <option>新月君</option>
+                                        </select>        
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
                     </div>
-                    <div class="shop-cart-action clearfix">
-                        <a  class="btn btn-primary btn-next" data-needlogin="true" data-rel="/buy/checkout" id="postTast">支付</a>
-                        <a  class="btn btn-lineDakeLight btn-back" id="saveTask">保存任务</a>
+                    <div class="shop-cart-box-ft clearfix">
+                        <div class="shop-cart-total">
+                            <p class="total-price">任务总额：<strong><span id="totalAmount">0.00</span></strong>拖星币</p>
+                        </div>
+                        <div class="shop-cart-action clearfix">
+                            <a  class="btn btn-primary btn-next" data-needlogin="true" data-rel="/buy/checkout" id="postTast">支付</a>
+                            <a  class="btn btn-lineDakeLight btn-back" id="saveTask">保存任务</a>
+                        </div>
                     </div>
+                </div>
+            </div>
+            <div id="clothLayer" class="layer interactions">
+                
+            </div>
+            <div id="reassure" class="manuX interactions">
+                <fieldset>
+                    <legend id="taskTitle">张三的's 背诵一百个单词 计划</legend>
+                    <div style="float:left;width:100%">
+                        <fieldset style="float:left;width:100px">
+                            <legend>监督人</legend>
+                            <img src="img/xueba.jpg" width="100px"/><br/>
+                            <span id="supervisor">猴小喵</span><br/>
+                        </fieldset>
+                        <fieldset style="float:left;width:210px;height:140px">
+                            <legend>详情</legend>
+                            <span id="taskDetail" >我每天要很努力地背诵一百个单词</span>
+                        </fieldset>
+                    </div>
+                    <div style="float:left;width:100%">
+                        <fieldset style="float:left;width:339px">
+                            <legend>截止日期</legend>
+                                <ul id="deadlines">
+
+                                </ul>
+                        </fieldset>
+                    </div>
+                    
+                </fieldset>
+
+                <fieldset>
+                    <legend>支付方式</legend>
+                    <div style="width:100%; border-style: solid; border-width:0px; float:left">
+                        <div style="float:left; border-style: solid; border-width: 2px; padding: 22px">
+                            拖星币
+                        </div>
+                        <div style="float:left; border-style: solid; border-width: 2px; padding: 22px">
+                            支付宝
+                        </div>
+                        <div style="float:left; border-style: solid; border-width: 2px; padding: 22px;">
+                            网银
+                        </div>
+                        <div style="float:left; border-style: solid; border-width: 2px; padding: 22px;">
+                            PayPal
+                        </div>
+                    </div>
+
+                    <form id="payCheck">
+                        如何用拖星币支付。<br/>
+
+                        拖星币，拖斯拉的货币。拖星币越多拖斯拉越开心。<br/>
+
+                        购买拖星币：<a href="">淘宝</a><br/>
+                        已经购买了？为拖星币<a href="">充值</a><br/>
+                        账户余额：300拖星币 本次消耗：100拖星币<br/>
+                        <input type="checkbox" id="agreeMe"  class="required" name="agreeMe">我同意</input><br/>
+                        <input type="button" text="" id="modifyButton" value="返回修改">
+                        <button id="addTXB">增加拖星币</button>
+                        <input type="button" id="payQ" value="支付">
+                    </form>
+                </fieldset>
+                <hr/>
+                
+                <div id="noModification" style="display:none" class="interactions">
+                <fieldset>
+                    <legend>还要修改？</legend>
+                    学霸说：你妹啊，还犹豫什么！<br/>
+                    赶快行动了。今天还有:000结束！<br/>
+                    <button id="modifyAssured">返回修改</button><button id="noModifyAssured">不改了</button>
+                </fieldset>
+                </div>
+
+                <div id="confirm"  style="display:none" class="interactions">
+                    一旦确定的话，<br/>
+                    再！也！不！能！修！改！了！<br/>
+                    完不成任务的话，<br/>
+                    绝！对！不！会！退！钱！的！<br/>
+                    <button id="payLater">认怂，不继续了</button><button id="payNow">确定！支付！！</button>
                 </div>
             </div>
         </div>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
