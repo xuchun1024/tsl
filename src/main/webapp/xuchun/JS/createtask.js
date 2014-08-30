@@ -225,6 +225,7 @@ $(document).ready(function(){
 		//window.location.href = "checkout.html?json=" + o;
 		$("#clothLayer").show();
 		$("#reassure").show();
+		$(".ui-datepicker").hide();
 	});
 
 	///点击支付按钮

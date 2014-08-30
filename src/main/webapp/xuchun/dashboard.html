@@ -48,29 +48,32 @@
             </div>
             <hr/>
         </div>
+        <div id="main" style="width:800px">
             <fieldset>
                 <legend>用户信息</legend>
                 <img src="img/tosslar.gif" style="float:left;"/>
                 <ul style="float:left">
-                    <li>用户名：张三</li>
-                    <li>可用余额: 300</li>
-                    <li>待完成任务额：500</li>
-                    <li>总资产：800</li>
+                    <li>用户名：<span id="userNameShow">张三</span></li>
+                    <li>可用余额: <span id="balanceShow">300</span></li>
+                    <li>待完成任务额：<span id="frosenShow">500</span></li>
+                    <li>总资产：<span id="sumShow">800</span></li>
                 </ul>
             </fieldset>
-            <div>
+            <fieldset>
+                <legend>倒计时</legend>
                 <h2>距离今天结束还有:</h2>
-                <div class="base" id="timeNumber" style="width:100%;border-style: solid; border-width: 1px;">
+                <div class="base" id="timeNumber" >
                     <label class="time" id="hh">00</label> 
                     <label class="maohao" id="maohao1" >:</label>
                     <label class="time" id="mm" >00</label>
                     <label class="maohao" id="maohao2" >:</label>
-                    <label class="time" id="ss" >00</label>   
+                    <label class="time" id="ss" >00</label>  
+                    <span id="testTimer">a</span> 
                 </div>
-            </div>
+            </fieldset>
             <fieldset>
                 <legend>任务信息</legend>
-                <ul style="float:left">待完成任务
+                <ul style="float:left" id="missionInProgressList">待完成任务
                     <li>背1100个单词--<font color="green">进行中 3/10</font>  <a href="#">完成</a> <a href="#">放弃</a></li>
                     <li>跑一百公里--<font color="green">进行中 3/10</font> <a href="#">完成</a> <a href="#">放弃</a></li>
                     <li>阅读100页--<font color="orange">延误1次  3/10</font> <a href="#">完成</a> <a href="#">放弃</a></li>
@@ -83,6 +86,7 @@
             <fieldset>
                 <legend>上传证据</legend>
                 <form method="post">
+                    评论：<input type="text" id="taskComment"/><br/>
                     请选择您要上传的文件<input type="file"/><br/>
                     <input type="submit" />
                 </form>
