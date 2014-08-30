@@ -6,6 +6,7 @@
         <meta name="description" content="">
         <meta name="keywords" content="拖斯拉, Tosslar">
         <link rel="stylesheet" href="css/jqueryui/jquery.ui.all.css">
+        <link rel="stylesheet" href="css/dashboard.css">
         <script src="js/jquery-1.4.4.min.js"></script>
         <script src="js/jquery-ui-1.8.10.custom.min.js"></script>
         <script src="js/jquery.ui.datepicker.my.js"></script>
@@ -39,14 +40,15 @@
         </style>
     </head>
     <body>
-        <div style="text-aligh:center;">
+        <div id="clothLayer" class="layer interactions"> 
+        </div>
+        <div style="text-aligh:center;" class="boss">
         <div class="header">
             <div class="headerlinks" style="float:right; width:100%">
-                <a style = "float:right;" href="index.html">首页|</a> 
+                <a style = "float:right;" href="#">登出</a>
                 <a style = "float:right;" href="dashboard.html">张三 |</a> 
-                <label style = "float:right; padding-right:20px"><a href="#">登出 |</a> </label>
+                <a style = "float:right;" href="index.html" >首页|</a> 
             </div>
-            <hr/>
         </div>
         <div id="main" style="width:800px">
             <fieldset>
@@ -83,11 +85,13 @@
                     <li>跑10公里--<font color="red">9/10完成</font></li>
                 </ul>
             </fieldset>
-            <fieldset>
+            <fieldset class="upload" id="uploadEvidence">
                 <legend>上传证据</legend>
                 <form method="post">
-                    评论：<input type="text" id="taskComment"/><br/>
-                    请选择您要上传的文件<input type="file"/><br/>
+                    日志：<br/><textarea type="text" id="taskComment">记录值得记录的一切</textarea><br/>
+                    请选择您要上传的文件<br/>
+                    <input type="file"/><br/>
+                    <input type="hidden" id="taskID"/>
                     <input type="submit" />
                 </form>
             </fieldset>

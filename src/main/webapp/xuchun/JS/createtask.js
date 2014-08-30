@@ -180,15 +180,19 @@ $(document).ready(function(){
 	///点击返回修改
 	$("#modifyButton").click(function(){
 		$("#noModification").show();
-
+		$("#clothLayer_01").show();
 	});
-	///确认修改
+
+	///确认返回修改
 	$("#modifyAssured").click(function(){
 		$(".interactions").hide();
+		///
 	});
-	///不修改
+
+	///不返回修改
 	$("#noModifyAssured").click(function(){
 		$("#noModification").hide();
+		$("#clothLayer_01").hide();
 	});
 
 	///点击发布任务的按钮
@@ -206,6 +210,34 @@ $(document).ready(function(){
 			return;
 		};
 
+		var o = createMission();
+		installConfirmPage(o);
+		//window.location.href = "checkout.html?json=" + o;
+		$("#clothLayer").show();
+		$("#reassure").show();
+		$(".ui-datepicker").hide();
+	});
+
+	///点击支付按钮
+	$("#payQ").click(function(){
+		//$("#payCheck").validate();
+		if ($("#agreeMe").attr("checked") == true){
+			if (parseInt($("#amountSum").text()) <= user.balance){
+				$("#confirm").show();
+				$("#clothLayer_01").show();	
+			} else {
+				$("#chargeButton").click();
+				$("#messgerCharge").text("没钱，请充值");
+			}
+		} else {
+			$("#agreeRe").show();
+		}
+	});
+
+	///点击真的支付
+	$("#payNow").click(function(){
+		window.location.href="checkout.html";
+
 		//// 去远端传递数据
 		/*var taskObj = postTaskHandler();
 		switch (taskObj.err) {
@@ -220,38 +252,24 @@ $(document).ready(function(){
 		}
 		*/
 
-		var o = createMission();
-		installConfirmPage(o);
-		//window.location.href = "checkout.html?json=" + o;
-		$("#clothLayer").show();
-		$("#reassure").show();
-		$(".ui-datepicker").hide();
-	});
-
-	///点击支付按钮
-	$("#payQ").click(function(){
-		
-		//$("#payCheck").validate();
-		if ($("#agreeMe").attr("checked") == true){
-			$("#confirm").show();	
-		} else {
-			alert("请同意，同意框要点上啊");
-		}
-
-		
-	});
-
-	///点击真的支付
-	$("#payNow").click(function(){
-		window.location.href="checkout.html";
+		///
 	});
 
 	///点击认怂
 	$("#payLater").click(function(){
 		$("#confirm").hide();
+		$("#clothLayer_01").hide();
 	});
 
-	///点击充值
+	//// 充值类型按钮触发
+	$(".chargeTri").click(function(){
+		$("#chargeLayer").show();
+		$("#clothLayer_01").show();
+		$("#clothLayer").show();
+		$("#messgerCharge").text("");
+	});
+
+	///点击充值确定按钮
 	$("#chargeSubmit").click(function(){
 		var chargeObj = {
 			charger : user.id,
@@ -259,17 +277,21 @@ $(document).ready(function(){
 		}
 		var chargeJSON = JSON.stringify(chargeObj);
 		alert(chargeJSON);
+		$(".interactions").hide();
+		$("#postTast").click();
 	});
 
-	$(".chargeTri").click(function(){
-		$("#chargeLayer").show();
-	});
-
+	//// 充值返回按钮
 	$("#clearCardCode").click(function(){
-		$("#cardCode").val("");
+		$(".interactions").hide();
+		$("#postTast").click();
 	});
-	// ===================test
-	
+
+	///我同意触发
+	$("#agreeMe").click(function(){
+		$("#agreeRe").hide();
+		///
+	})
 });
 
 

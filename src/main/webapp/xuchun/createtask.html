@@ -6,7 +6,6 @@
         <meta name="description" content="">
         <meta name="keywords" content="拖斯拉, Tosslar">
         <link rel="stylesheet" type="text/css" href="css/base.min.css">
-        <link rel="stylesheet" type="text/css" href="css/shopCart.min.css">
         <link rel="stylesheet" href="css/jqueryui/jquery.ui.all.css">
         <link rel="stylesheet" href="css/createTask.css">
         <script src="js/jquery-1.4.4.min.js"></script>
@@ -55,12 +54,11 @@
                                         <div class="g-info">
                                             <div class="g-name">
                                                 <a target="_blank">
-                                                    <label for="taskDetail">任务描述:</label>
+                                                    <label for="taskDetail"></label>
                                                     <textarea name="textarea" id="taskDetail">请输入任务描述</textarea>
                                                 </a>
                                             </div>
                                             <div class="g-detail clearfix">
-                                                <input id='datepicker_input' type='text' style=' width:1px; height:1px; border:0px;'>
                                                 <span  id="datepicker"></span>
                                                 <br/>
                                                 <span id="timeDetail">当前任务的截止日期：2014-08-30</span>
@@ -100,6 +98,7 @@
                         <div class="shop-cart-action clearfix">
                             <a  class="btn btn-primary btn-next" data-needlogin="true" data-rel="/buy/checkout" id="postTast">支付</a>
                             <a  class="btn btn-lineDakeLight btn-back" id="saveTask">保存任务</a>
+                            <input id='datepicker_input' type='text' style=' width:1px; height:1px; border:0px;'>
                         </div>
                     </div>
                 </div>
@@ -132,18 +131,18 @@
                 </fieldset>
 
                 <fieldset>
-                    <legend>支付方式</legend>
-                    <div style="width:100%; border-style: solid; border-width:0px; float:left">
-                        <div style="float:left; border-style: solid; border-width: 2px; padding: 22px">
+                    <legend class="payWayheader_ly">支付方式</legend>
+                    <div style="width:100%; border-style: solid; border-width:0px; float:left" >
+                        <div style="float:left; border-style: solid; border-width: 2px; padding: 22px" class="payWay_ly">
                             拖星币
                         </div>
-                        <div style="float:left; border-style: solid; border-width: 2px; padding: 22px">
+                        <div style="float:left; border-style: solid; border-width: 2px; padding: 22px" class="payWay_ly">
                             支付宝
                         </div>
-                        <div style="float:left; border-style: solid; border-width: 2px; padding: 22px;">
-                            网银
+                        <div style="float:left; border-style: solid; border-width: 2px; padding: 22px;" class="payWay_ly">
+                            网  银
                         </div>
-                        <div style="float:left; border-style: solid; border-width: 2px; padding: 22px;">
+                        <div style="float:left; border-style: solid; border-width: 2px; padding: 22px;" class="payWay_ly">
                             PayPal
                         </div>
                     </div>
@@ -161,16 +160,19 @@
                         本次消耗：
                         <span id="amountSum">0</span>
                         拖星币<br/>
-                        <input type="checkbox" id="agreeMe"  class="required" name="agreeMe">我同意</input><br/>
+                        <input type="checkbox" id="agreeMe"  class="required" name="agreeMe">我同意</input>
+                        <span class="alertMsg" style="display:none" id="agreeRe">需要点击同意</span>
+                        <br/>
                         <input type="button" text="" id="modifyButton" value="返回修改">
                         <button id="addTXB">增加拖星币</button>
                         <input type="button" id="chargeButton" class="chargeTri" value="充值">
                         <input type="button" id="payQ" value="支付">
                     </form>
                 </fieldset>
-                <hr/>
                 
-                <div id="noModification" style="display:none" class="interactions">
+                 <div id="clothLayer_01" class="layer_01 interactions"> 
+                </div>
+                <div id="noModification" style="display:none" class="interactions fixIt">
                 <fieldset>
                     <legend>还要修改？</legend>
                     学霸说：你妹啊，还犹豫什么！<br/>
@@ -179,42 +181,29 @@
                 </fieldset>
                 </div>
 
-                <div id="confirm"  style="display:none" class="interactions">
+           
+                <div id="confirm"  style="display:none" class="interactions fixIt">
+                <fieldset>
+                <legend>不能反悔！！！</legend>
                     一旦确定的话，<br/>
                     再！也！不！能！修！改！了！<br/>
                     完不成任务的话，<br/>
                     绝！对！不！会！退！钱！的！<br/>
-                    <button id="payLater">认怂，不继续了</button><button id="payNow">确定！支付！！</button>
+                    <button id="payLater" class="button_1">认怂，不继续了</button><button id="payNow" class="button_1">确定！支付！！</button>
+                </fieldset>
                 </div>
             </div>
-            <div class="interactions">
-                <fieldset id="chargeLayer" style="display:none">
+            <div class="interactions charge_ly" id="chargeLayer" style="display:none">
+                <fieldset>
                     <legend>充值</legend>
+                        <span id="messgerCharge" class="alertMsg"></span><br/>
                         卡密：
                         <input id="cardCode" type="text" /><br/>
                         请直接从淘宝那里复制过来，<br/>
                         充值失败3次的话，会被禁止哦。<br/>
-                        <button id="clearCardCode">重置</button><button id="chargeSubmit">充值</button>
+                        <button id="clearCardCode" class="button_1">放弃返回</button><button id="chargeSubmit" class="button_1">充值</button>
                 </fieldset>
             </div>
         </div>
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

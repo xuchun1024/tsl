@@ -16,6 +16,7 @@
  		///		1: on progress
  		///		2: finished
  		///		3: failed
+ 		id : 2,
  		holder: 10001,
 		missionName: "背单词",
 		createTime: new Date("2014-08-03"),
@@ -23,14 +24,16 @@
 		endTime: new Date("2014-10-03"),
 		tasks : [
 			{
+				id : 12,
 				name : "背单词",
 				detail : "我要背单词",
 				date : new Date("2014-09-03"),
 				amount : 30,
 				supervisor : "学霸",
-				status : 1,
+				status : 2,
 			},
 			{
+				id : 13,
 				name : "背单词",
 				detail : "我要背单词",
 				date : new Date("2014-10-03"),
@@ -43,7 +46,48 @@
 		status: 1,
 		finished:3,
 		failed:4,
-		totalTasks: 10,
+ 	},
+
+
+ ];
+
+  var missionFinList = [
+ 	{
+ 		///status: 
+ 		///		o: not start
+ 		///		1: on progress
+ 		///		2: finished
+ 		///		3: failed
+ 		id : 3,
+ 		holder: 10001,
+		missionName: "腹肌撕裂者已完成",
+		createTime: new Date("2014-08-03"),
+		beginTime: new Date("2014-08-03"),
+		endTime: new Date("2014-8-23"),
+		tasks : [
+			{
+				id : 10,
+				name : "背单词",
+				detail : "我要背单词",
+				date : new Date("2014-09-03"),
+				amount : 30,
+				supervisor : "学霸",
+				status : 2,
+			},
+			{
+				id : 13,
+				name : "背单词",
+				detail : "我要背单词",
+				date : new Date("2014-10-03"),
+				amount : 30,
+				supervisor : "学霸",
+				status : 3,
+			},
+		],
+		amountSum : 100,
+		status: 1,
+		finished:3,
+		failed:4,
  	},
 
 
@@ -140,9 +184,39 @@ $(document).ready(function(){
 
 		var ff = missionList[i].finished + missionList[i].failed;
 
-		missionHTML += "<li>" + missionList[i].missionName + "---" + switcher + " " + String(ff) + "/" + String(missionList[i].totalTasks) + "</font>";
+		missionHTML += "<li>" + missionList[i].missionName + "---" + switcher + " " + String(ff) + "/" + String(missionList[i].tasks.length) + "</font>";
+		missionHTML += "<button class=\"finishButton\" value=\"" + i + "\">完成</button> <button class=\"giveUpButton\">放弃</button>";
+		
+		//// 筛选必要的东西
+		// var testArr = $.grep(missionList[i].tasks, function(value){
+		// 	return value.status = 1;
+		// })
+		// alert(testArr.length);
 	}
 	$("#missionInProgressList").html(missionHTML);
+
+
+
+
+	$(".giveUpButton").click(function(){
+		
+		var tg = $(event.target);
+		tg.attr("disabled","true");
+		$(tg).unbind("click");
+		alert("放弃你妹啊！！");
+	});
+
+	$(".finishButton").click(function(){
+		var tg = $(event.target);
+		i = tg.attr("value");
+		var testArr = $.grep(missionList[i].tasks, function(value){
+			return value.status == 1;
+		})
+		$("#uploadEvidence").show();
+		$("#taskID").val(testArr[0].id);
+	});
+
+
 });
 
 

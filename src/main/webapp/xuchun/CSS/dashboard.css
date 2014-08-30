@@ -1,0 +1,46 @@
+.layer
+{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	padding: 0px;
+	margin: 0px;
+	background-color: gray;
+	width:100%;
+	height:100%;
+	
+	overflow: hidden;
+	display: none;
+
+	opacity:0.5;/*其他，透明度50%*/
+
+}
+.upload
+{
+	position: absolute;
+	left: 32%;
+	top: 260px;
+	padding: 0px;
+	margin: 0px;
+	background-color: white;
+	width:400px;
+
+	display: none;
+}
+.boss
+{
+	position: absolute;
+	left: 22%;
+}
+.headerlinks
+{
+	margin-bottom: 40px;
+	margin-top: 20px;
+	height: 40px;
+	background-color: #2f8373;
+}
+a
+{
+	color: white;
+	padding: 10px;
+}

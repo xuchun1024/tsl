@@ -13,19 +13,84 @@
 	display: none;
 
 	opacity:0.5;/*其他，透明度50%*/
-}
 
-.manuX
+}
+.layer_01
 {
-	display:none;
 	position: absolute;
 	left: 0px;
 	top: 0px;
 	padding: 0px;
 	margin: 0px;
-	background-color: white;
-	width:400px;
+	background-color: gray;
+	width:100%;
+	height:100%;
 	
 	overflow: hidden;
 	display: none;
+
+
+	opacity:0.5;/*其他，透明度50%*/
+
+}
+
+
+.manuX
+{
+	display:none;
+	position: absolute;
+	left: 35%;
+	top: 80px;
+	padding: 0px;
+	margin: 0px;
+	background-color: white;
+	width:400px;
+
+	
+	overflow: hidden;
+	display: none;
+}
+.payWay_ly
+{
+	background-color: #2f8373;
+	color: white;
+	font-size: 10px;
+	vertical-align: center;
+	width: 40px;
+	height: 3px;
+	margin: 2px;
+}
+.ui-datepicker 
+{    
+	margin-top:-0px;
+	margin-left: 150px;
+}
+.fixIt
+{
+	position: absolute;
+	top: 200px;
+	padding: 0px;
+	margin: 0px;
+	background-color: white;
+	width:400px;
+}
+.button_1
+{
+	margin:2px;
+}
+.charge_ly
+{
+	position: absolute;
+	top: 300px;
+	left: 35%;
+	padding: 0px;
+	margin: 0px;
+	z-index: 20px;
+	width:400px;
+	background-color: white;
+}
+
+.alertMsg
+{
+	color: red;
 }
