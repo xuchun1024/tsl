@@ -92,7 +92,7 @@
 				date : new Date("2014-09-03"),
 				amount : 30,
 				supervisor : "学霸",
-				status : 2,
+				status : 1,
 			},
 			{
 				id : 13,
@@ -177,7 +177,14 @@ function load(){
 	  	 deadTask = new Date(dateTask.getTime() - dateN.getTime() + 1000 + 24*60*60*1000);
 	  	 if (deadTask > 24*60*60*1000)
 	  	 {
-	  	 	spanTime.eq(i).text("剩余1天以上");
+	  	 	if (deadTask < 72*60*60*1000)
+  	 		{
+  	 			var hours = deadTask.getUTCHours() + (deadTask.getUTCDate()-1)*24;
+	  	 		spanTime.eq(i).text("剩余:" + printf("%02d",hours) + ":" + printf("%02d", deadTask.getMinutes()) +":"+ printf("%02d", deadTask.getSeconds()));	
+	  	 		// $("#testTimer").text(deadTask.toUTCString())
+	  	 	} else {
+	  	 		spanTime.eq(i).text("剩余3天以上");
+	  	 	}
 	  	 }
 	  	 else
 	  	 {

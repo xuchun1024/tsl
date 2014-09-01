@@ -11,77 +11,96 @@
         <script src="js/jquery-ui-1.8.10.custom.min.js"></script>
         <script src="js/jquery.ui.datepicker.my.js"></script>
         <script src="js/dashboard.js"></script>
-    </head>
-    <body> 
-        <div style="text-aligh:center;" class="container main">
-            <div id="clothLayer" class="layer interactions"> 
-            </div>
-            <div class="header container" style="float:right;width:100%">
-                <div class="headerlinks" style="float:right;">
-                    <a href="index.html" >首页</a> |
-                    <a href="dashboard.html">张三</a> |
-                    <a href="#">登出</a>
-                </div>
-            </div>
-            <div class="main container">
-                <fieldset>
-                    <legend>用户信息</legend>
-                    <img src="img/tosslar.gif" style="float:left;"/>
-                    <ul style="float:left">
-                        <li>用户名：<span id="userNameShow">张三</span></li>
-                        <li>可用余额: <span id="balanceShow">300</span></li>
-                        <li>待完成任务额：<span id="frosenShow">500</span></li>
-                        <li>总资产：<span id="sumShow">800</span></li>
-                    </ul>
-                </fieldset>
-                <fieldset>
-                    <legend>倒计时</legend>
-                    <h2>距离今天结束还有:</h2>
-                    <div class="base" id="timeNumber" >
-                        <label class="time" id="hh">00</label> 
-                        <label class="maohao" id="maohao1" >:</label>
-                        <label class="time" id="mm" >00</label>
-                        <label class="maohao" id="maohao2" >:</label>
-                        <label class="time" id="ss" >00</label>  
-                        <span id="testTimer">a</span> 
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>任务信息</legend>
-                    <fieldset >
-                        <legend>待完成任务</legend>
-                        <ul id="missionInProgressList">
-                            <li>背1100个单词--<font color="green">进行中 3/10</font>  <a href="#">完成</a> <a href="#">放弃</a></li>
-                            <li>跑一百公里--<font color="green">进行中 3/10</font> <a href="#">完成</a> <a href="#">放弃</a></li>
-                            <li>阅读100页--<font color="orange">延误1次  3/10</font> <a href="#">完成</a> <a href="#">放弃</a></li>
-                        </ul>
-                    </fieldset>
-                    <fieldset>
-                        <legend>已完成任务</legend>
-                        学霸说懒得写
-                    </fieldset>
-                    </ul>
-                </fieldset>
-            </div>
-            <div class="upload interactions" id="uploadEvidence">
-                    <fieldset>
-                        <legend id="taskNameShow">任务名</legend>
-                        任务完成啦，载歌载舞。
+        <style>
 
-                    </fieldset>
-                    <fieldset>
-                        <legend>上传证据</legend>
-                        
-                        <form method="post">
-                            日志：<br/><textarea type="text" id="taskComment">记录值得记录的一切</textarea><br/>
-                            请选择您要上传的文件<br/>
-                            <input type="file"/><br/>
-                            <input type="hidden" id="taskID"/>
-                            <input type="submit" />
-                        </form>
-                        <button class="closeAll">其实还没完成，等等再上传</button>
-                    </fieldset>
-            </div>  
+#hh{
+    color: #2f8373;
+    font-weight: 500;
+    font-size: 120px;
+    }
+#mm{
+    color: #53c3ae;
+    font-size: 120px;
+    font-weight: 500;
+    }
+#ss{
+    color: #9ce7d9;
+    font-size: 120px;
+    font-weight: 500;
+    }
+#maohao1{
+    color: #2f8373;
+    font-weight: 500;
+    font-size: 120px;
+    }
+#maohao2{
+    color: #53c3ae;
+    font-size: 120px;
+    font-weight: 500;
+    }
+        </style>
+    </head>
+    <body>
+        <div id="clothLayer" class="layer interactions"> 
         </div>
+        <div class="headerlinks" style="float:right; width:100%">
+                <img src="img/logo-words-1.png" class="logoWords">
+                <div class="headerSetel">
+                <a style = "float:right;" href="index.html"  class="headerlinks_ly">首页|</a> 
+                <a style = "float:right;" href="dashboard.html" class="headerlinks_ly">张三 |</a> 
+                <a style = "float:right;" href="#" class="headerlinks_ly">登出 |</a>
+                </div> 
+         </div>
+        <div style="text-aligh:center;" class="boss">   
+        <div id="main" style="width:800px">
+            <fieldset class="fieldset_ly countTime">
+                <legend> <h2>距离今天结束还有:</h2></legend>
+                <div class="base" id="timeNumber" >
+                    <label class="time" id="hh">00</label> 
+                    <label class="maohao" id="maohao1" >:</label>
+                    <label class="time" id="mm" >00</label>
+                    <label class="maohao" id="maohao2" >:</label>
+                    <label class="time" id="ss" >00</label>  
+                </div>
+            </fieldset>
+        </div>
+
+      
+        <div id="main" style="width:800px" class="body_ly">
+           <img src="img/detail-BG.png">
+            <div class="fieldset_ly userMessage">
+                <legend><h3><span id="userNameShow">张三</span></h3></legend>
+                <img class="headPicture" src="img/picture.jpg" style="float:left;"/>
+                <ul style="float:left">                   
+                    <li>可用余额: <span id="balanceShow">300</span></li>
+                    <li>待完成任务额：<span id="frosenShow">500</span></li>
+                    <li>总资产：<span id="sumShow">800</span></li>
+                </ul>
+            </div>
+            
+            <div class="fieldset_ly taskMessage">
+                <legend><h3>任务信息</h3></legend>
+                <ul style="float:left" id="missionInProgressList">待完成任务
+                    <li>背1100个单词--<font color="green">进行中 3/10</font>  <a href="#">完成</a> <a href="#">放弃</a></li>
+                    <li>跑一百公里--<font color="green">进行中 3/10</font> <a href="#">完成</a> <a href="#">放弃</a></li>
+                    <li>阅读100页--<font color="orange">延误1次  3/10</font> <a href="#">完成</a> <a href="#">放弃</a></li>
+                </ul>
+                <ul style="float:left">已完成任务
+                    <li>背一百个单词--<font color="green">全部完成</font></li>
+                    <li>跑10公里--<font color="red">9/10完成</font></li>
+                </ul>
+            </div>
+
+            <fieldset class="upload">
+                <legend>上传证据</legend>
+                <form method="post">
+                    评论：<input type="text" id="taskComment"/><br/>
+                    请选择您要上传的文件<input type="file"/><br/>
+                    <button>返回</button>
+                    <input type="submit" />
+                </form>
+            </fieldset>
+        </div>
+    </div>
     </body>
 </html>
