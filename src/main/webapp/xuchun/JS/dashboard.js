@@ -18,7 +18,7 @@
  		///		3: failed
  		id : 2,
  		holder: 10001,
-		missionName: "背单词",
+		missionName: "每天背100单词",
 		createTime: new Date("2014-08-03"),
 		beginTime: new Date("2014-09-03"),
 		endTime: new Date("2014-10-03"),
@@ -223,6 +223,7 @@ $(document).ready(function(){
 	$("#balanceShow").text(user.balance);
 	$("#frosenShow").text(user.frosen);
 	$("#sumShow").text(user.frosen + user.balance)
+	
 
 	
 	///初始化missionList
@@ -281,12 +282,14 @@ $(document).ready(function(){
 		var ff = missionList[i].finTasks.length + missionList[i].faiTasks.length + 1;
 
 		missionHTML += "<li class=\"missLi\" id=\"pl" + i + "\">" + 
-							String(ff) + "/" + String(missionList[i].tasks.length) + 
-							missionList[i].missionName + "---" +
-							switcher + " " + "</font>" +
-							"<span class=\"leftTime\" deadline=\"" + missionList[i].ProTasks[0].date.toLocaleDateString() + "\">1*1</span>" +
-							"<button class=\"finishButton\" value=\"" + i + "\">完成</button> " +
-							"<button class=\"giveUpButton\">放弃</button>" +
+							"<span class=\"missLiSpan\">" +
+								String(ff) + "/" + String(missionList[i].tasks.length) + 
+								missionList[i].missionName + "---" +
+								switcher + " " + "</font>" +
+								"<span class=\"leftTime\" deadline=\"" + missionList[i].ProTasks[0].date.toLocaleDateString() + "\"></span>" +
+								"<button class=\"finishButton\" value=\"" + i + "\">完成</button> " +
+								"<button class=\"giveUpButton\">放弃</button>" +
+							"</span>" +
 							"<div id=\"spl" + i +"\" class=\"taskDetailSpan\">" +
 								"合计：" + missionList[i].tasks.length + "<br/>" +
 								"待完成：" + missionList[i].toBeDone +

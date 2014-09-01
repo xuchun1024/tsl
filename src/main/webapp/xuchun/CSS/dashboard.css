@@ -109,3 +109,10 @@ a:link {color: blue; text-decoration:none;}
 a:active:{color: red; }
 a:visited {color:white;text-decoration:none;} 
 a:hover {color: red; text-decoration:underline;} 
+
+.taskDetailSpan{
+	display: none;
+}
+.missionOnGoing{
+	width: 400px;
+}

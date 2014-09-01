@@ -80,11 +80,65 @@
             
             <div class="fieldset_ly taskMessage">
                 <legend><h3>任务信息</h3></legend>
-                <ul style="float:left" id="missionInProgressList">待完成任务
-                    <li>背1100个单词--<font color="green">进行中 3/10</font>  <a href="#">完成</a> <a href="#">放弃</a></li>
-                    <li>跑一百公里--<font color="green">进行中 3/10</font> <a href="#">完成</a> <a href="#">放弃</a></li>
-                    <li>阅读100页--<font color="orange">延误1次  3/10</font> <a href="#">完成</a> <a href="#">放弃</a></li>
-                </ul>
+                <fieldset class="missionOnGoing">
+                    <legend class="missionOnGoingLegend">进行中的任务</legend>
+                    <ul style="float:left" id="missionInProgressList">
+                        <li class="missLi" id="pl0">
+                            4/5背单词---
+                            <font class="inProgress">进行中 </font>
+                            <span class="leftTime" deadline="8/31/2014">剩余:11:53:19</span>
+                            <button class="finishButton" value="0">完成</button> 
+                            <button class="giveUpButton">放弃</button>
+                            <div id="spl0" class="taskDetailSpan">
+                                合计：5<br>
+                                待完成：2完成了：2失败了：1
+                                <ul class="dateList">
+                                    <li>
+                                        9/3/2014
+                                        <font class="finishedD">已完成</font>
+                                    </li>
+                                    <li>
+                                        9/5/2014
+                                        <font class="finishedD">已完成</font>
+                                    </li>
+                                    <li>
+                                        9/6/2014
+                                        <font class="failedD">已失败</font>
+                                    </li>
+                                    <li>
+                                        8/31/2014
+                                        <font class="inProgressD">努力中</font>
+                                    </li>
+                                    <li>
+                                        10/5/2014
+                                        <font class="inProgressD">努力中</font>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="missLi" id="pl1">
+                            1/2躺着---
+                            <font class="inProgress">进行中 </font>
+                            <span class="leftTime" deadline="9/3/2014">剩余:59:53:19</span>
+                            <button class="finishButton" value="1">完成</button> 
+                            <button class="giveUpButton">放弃</button>
+                            <div id="spl1" class="taskDetailSpan">
+                                合计：2<br>
+                                待完成：2完成了：0失败了：0
+                                <ul class="dateList">
+                                    <li>
+                                        9/3/2014
+                                        <font class="inProgressD">努力中</font>
+                                    </li>
+                                    <li>
+                                        10/3/2014
+                                        <font class="inProgressD">努力中</font>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </fieldset>
                 <ul style="float:left">已完成任务
                     <li>背一百个单词--<font color="green">全部完成</font></li>
                     <li>跑10公里--<font color="red">9/10完成</font></li>

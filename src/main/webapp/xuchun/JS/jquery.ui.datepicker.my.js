@@ -20,6 +20,26 @@ var isedit = false;         				//是否是编辑广告状态，用于是否显�
 var ftimes = '';              			//对应数据库中的Ftimes字段
 var requestagain = 0;
 
+dttt = new Date();
+
+for (var i=0;i<7;i++)
+{
+	dttt.setDate(dttt.getDate() +1);
+	date_arr.push(String(dttt.getFullYear()) + "-" + printf("%02d",dttt.getMonth()+1) + "-" +printf("%02d",dttt.getDate()));
+	
+}
+
+
+
+function printf(){
+     var as=[].slice.call(arguments),fmt=as.shift(),i=0;
+  	 return     fmt.replace(/%(\w)?(\d)?([dfsx])/ig,function(_,a,b,c){
+          var s=b?new Array(b-0+1).join(a||''):'';
+          if(c=='d') s+=parseInt(as[i++]);
+          return b?s.slice(b*-1):s;
+     })
+}
+
 if (document.getElementsByName("ftimes").length > 0) {
 	ftimes = document.getElementsByName("ftimes")[0].value;
 }
@@ -1908,7 +1928,6 @@ $(function() {
 
 		//$this.append($input);
 		$("#datepicker_input").datepicker().change(function() {
-
 			var willVal = $("#datepicker_input").val();
 			var targetVal = $(opts.target).val();
 			
