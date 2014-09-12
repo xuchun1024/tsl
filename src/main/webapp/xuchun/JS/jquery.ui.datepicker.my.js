@@ -20,15 +20,20 @@ var isedit = false;         				//是否是编辑广告状态，用于是否显�
 var ftimes = '';              			//对应数据库中的Ftimes字段
 var requestagain = 0;
 
-dttt = new Date();
 
-for (var i=0;i<7;i++)
+
+function initializationDate()
 {
-	dttt.setDate(dttt.getDate() +1);
-	date_arr.push(String(dttt.getFullYear()) + "-" + printf("%02d",dttt.getMonth()+1) + "-" +printf("%02d",dttt.getDate()));
-	
+	dttt = new Date();
+	for (var i=0;i<7;i++)
+	{
+		dttt.setDate(dttt.getDate() +1);
+		date_arr.push(String(dttt.getFullYear()) + "-" + printf("%02d",dttt.getMonth()+1) + "-" +printf("%02d",dttt.getDate()));
+		
+	}
+	datess = date_arr;
+	print_datenum();
 }
-
 
 
 function printf(){

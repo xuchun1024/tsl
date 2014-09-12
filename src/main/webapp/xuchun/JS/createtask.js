@@ -135,7 +135,7 @@ function installConfirmPage(o)
 	var deadlineString ="";
 	for (var i=0; i < o.tasks.length; i++)
 	{
-		deadlineString += "<li class=\"deadlineLi\" style=\"float:left;list-style:none;padding-right:10px\">" + o.tasks[i].date.getFullYear() + "年" + String(o.tasks[i].date.getMonth()+1) + "月" + String(o.tasks[i].date.getDate()+1)+ "日</li>"
+		deadlineString += "<li class=\"deadlineLi\" style=\"float:left;list-style:none;padding-right:10px\">" + o.tasks[i].date.getFullYear() + "年" + printf("%02d",o.tasks[i].date.getMonth()+1) + "月" + printf("%02d", o.tasks[i].date.getDate()+1)+ "日</li>"
 	}
 	$("#deadlines").html(deadlineString);
 	$("#amountSum").text(o.amountSum);
@@ -292,7 +292,10 @@ $(document).ready(function(){
 	$("#agreeMe").click(function(){
 		$("#agreeRe").hide();
 		///
-	})
+	});
+
+	initializationDate();
+	
 });
 
 
