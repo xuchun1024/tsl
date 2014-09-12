@@ -54,7 +54,7 @@
 				id : 15,
 				name : "背单词",
 				detail : "我要背单词",
-				date : new Date("2014-08-31"),
+				date : new Date("2014-09-13"),
 				amount : 30,
 				supervisor : "学霸",
 				status : 1,
@@ -335,7 +335,7 @@ $(document).ready(function(){
 		})
 		$("#taskNameShow").text(testArr[0].name);
 		$("#clothLayer").show();
-		$("#uploadEvidence").show();
+		$(".upload").show();
 		$("#taskID").val(testArr[0].id);
 	});
 
