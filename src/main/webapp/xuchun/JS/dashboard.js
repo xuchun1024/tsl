@@ -150,8 +150,50 @@
 		status: 1,
 		finished:3,
 		failed:4,
+		hvstAmount: 30,
+		hvsted: false,
  	},
 
+ 	{
+ 		///status: 
+ 		///		o: not start 
+ 		////		0 maynot be neccessary
+ 		///		1: on progress
+ 		///		2: finished
+ 		///		3: failed
+ 		id : 4,
+ 		holder: 10001,
+		missionName: "读单词已完成",
+		createTime: new Date("2014-08-03"),
+		beginTime: new Date("2014-08-03"),
+		endTime: new Date("2014-8-23"),
+		tasks : [
+			{
+				id : 10,
+				name : "背单词",
+				detail : "我要背单词",
+				date : new Date("2014-09-03"),
+				amount : 30,
+				supervisor : "学霸",
+				status : 2,
+			},
+			{
+				id : 13,
+				name : "背单词",
+				detail : "我要背单词",
+				date : new Date("2014-10-03"),
+				amount : 30,
+				supervisor : "学霸",
+				status : 3,
+			},
+		],
+		amountSum : 100,
+		status: 1,
+		finished:3,
+		failed:4,
+		hvstAmount: 30,
+		hvsted: true,
+ 	},
 
  ];
 
@@ -201,7 +243,7 @@ function printf(){
           if(c=='d') s+=parseInt(as[i++]);
           return b?s.slice(b*-1):s;
      })
-}
+};
 
 function initializeMission(o)
 {
@@ -216,7 +258,16 @@ function initializeMission(o)
 		});
 	o.toBeDone = o.tasks.length - o.finTasks.length - o.faiTasks.length;
 	return o;
-}
+};
+
+function hvst(i){
+	if (missionFinList[i].hvsted){
+		alert("已经收获光了啦~~~~, 已经赚到了"+missionFinList[i].hvstAmount);
+	} else {
+		alert("哦yeah！！赚到了");
+	};
+
+};
 
 $(document).ready(function(){
 	$("#userNameShow").text(user.name);
@@ -309,7 +360,7 @@ $(document).ready(function(){
 		//mFinList
 		missionFinHTML += "<li class=\"missLiFin\" id=\"mlf" + i + "\">" +
 							missionFinList[i].missionName +
-							"</li>"
+							"<button onclick=\"hvst("+i+")\">收获</button></li>"
 
 	}
 	$("#mFinList").html(missionFinHTML);

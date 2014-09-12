@@ -45,9 +45,9 @@
         <div class="headerlinks" style="float:right; width:100%">
                 <img src="img/logo-words-1.png" class="logoWords">
                 <div class="headerSetel">
-                <a style = "float:right;" href="index.html"  class="headerlinks_ly">首页|</a> 
-                <a style = "float:right;" href="dashboard.html" class="headerlinks_ly">张三 |</a> 
-                <a style = "float:right;" href="#" class="headerlinks_ly">登出 |</a>
+                    <a href="index.html"  class="headerlinks_ly">首页</a>  |
+                    <a href="dashboard.html" class="headerlinks_ly">张三</a> |
+                    <a href="#" class="headerlinks_ly">登出</a>
                 </div> 
          </div>
         <div style="text-aligh:center;" class="boss">   
@@ -72,7 +72,7 @@
                 <img class="headPicture" src="img/picture.jpg" style="float:left;"/>
                 <ul style="float:left">                   
                     <li>可用余额: <span id="balanceShow">300</span></li>
-                    <li>待完成任务额：<span id="frosenShow">500</span></li>
+                    <li>待收获金额：<span id="frosenShow">500</span></li>
                     <li>总资产：<span id="sumShow">800</span></li>
                 </ul>
             </div>
@@ -148,7 +148,7 @@
         </div>
         <div id="clothLayer" class="layer interactions"> 
         </div>
-        <fieldset class="upload">
+        <fieldset class="upload interactions">
             <legend>上传证据</legend>
             <form method="post">
                 评论：<input type="text" id="taskComment"/><br/>
@@ -156,6 +156,14 @@
                 <button>返回</button>
                 <input type="submit" />
             </form>
+        </fieldset>
+
+        <fieldset class="interactions" id="hvstLayer">
+            <legend>收获</legend>
+            即将收获<span id="hvstAmount">0</span>
+            <button id="playAG" class="hvstBtn">再来一次</button>
+            <button id="cash" class="hvstBtn">收钱</button>
+            <button id="later" class="hvstBtn">以后再说</button>
         </fieldset>
     </div>
     </body>
