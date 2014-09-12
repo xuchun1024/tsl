@@ -253,25 +253,24 @@ $(document).ready(function(){
 		var dateListHTML = "";
 		for (var ii=0; ii < missionList[i].tasks.length; ii++){
 			var dateString = missionList[i].tasks[ii].date.toLocaleDateString();
-
-		var switcher2 ="";
-		switch (missionList[i].tasks[ii].status)
-		{
-			case 0:
-				switcher2 = "<font class=\"notStartedD\">未开始";
-				break;
-			case 1:
-				switcher2 = "<font class=\"inProgressD\">努力中";
-				break;
-			case 2:
-				switcher2 = "<font class=\"finishedD\">已完成";
-				break;
-			case 3:
-				switcher2 = "<font class=\"failedD\">已失败";
-				break;
-			default:
-				switcher2 = "错误";
-		} 
+			var switcher2 ="";
+			switch (missionList[i].tasks[ii].status)
+			{
+				case 0:
+					switcher2 = "<font class=\"notStartedD\">未开始";
+					break;
+				case 1:
+					switcher2 = "<font class=\"inProgressD\">努力中";
+					break;
+				case 2:
+					switcher2 = "<font class=\"finishedD\">已完成";
+					break;
+				case 3:
+					switcher2 = "<font class=\"failedD\">已失败";
+					break;
+				default:
+					switcher2 = "错误";
+			}
 
 			dateListHTML += "<li>" +
 							dateString+
@@ -282,7 +281,7 @@ $(document).ready(function(){
 		var ff = missionList[i].finTasks.length + missionList[i].faiTasks.length + 1;
 
 		missionHTML += "<li class=\"missLi\" id=\"pl" + i + "\">" + 
-							"<span class=\"missLiSpan\">" +
+							"<span class=\"missLiSpan\" id=\"pl" + i + "\">" +
 								String(ff) + "/" + String(missionList[i].tasks.length) + 
 								missionList[i].missionName + "---" +
 								switcher + " " + "</font>" +
@@ -304,6 +303,20 @@ $(document).ready(function(){
 	$("#missionInProgressList").html(missionHTML);
 
 
+
+	var missionFinHTML ="已完成的任务";
+	for (var i=0; i<missionFinList.length;i++){
+		//mFinList
+		missionFinHTML += "<li class=\"missLiFin\" id=\"mlf" + i + "\">" +
+							missionFinList[i].missionName +
+							"</li>"
+
+	}
+	$("#mFinList").html(missionFinHTML);
+
+
+
+/// 按钮处理阶段
 
 
 	$(".giveUpButton").click(function(){
@@ -335,8 +348,6 @@ $(document).ready(function(){
 	});
 
 	$(".missLi").click(function(){
-		// tg = $(event.target);
-		
 		tg = "#s" + $(event.target).attr("id");
 		$(tg).fadeToggle();	
 		

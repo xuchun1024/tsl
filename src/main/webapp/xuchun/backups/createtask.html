@@ -7,7 +7,7 @@
         <meta name="keywords" content="拖斯拉, Tosslar">
         <link rel="stylesheet" type="text/css" href="css/base.min.css">
         <link rel="stylesheet" href="css/jqueryui/jquery.ui.all.css">
-        <link rel="stylesheet" href="css/createtask.css">
+        <link rel="stylesheet" href="css/createTask.css">
         <script src="js/jquery-1.4.4.min.js"></script>
         <script src="js/jquery-ui-1.8.10.custom.min.js"></script>
         <script src="js/jquery.ui.datepicker.my.js"></script>
@@ -105,111 +105,105 @@
             </div>
             <div id="clothLayer" class="layer interactions"> 
             </div>
-
-        <div class="container_manuX">
             <div id="reassure" class="manuX interactions">
-                <div class="confirm_ly">
-                    <h3><div id="taskTitle" class="confirmTittle_ly tittleBG">张三的's 背诵一百个单词 计划</div></h3>
-                    <div class="confirmBG_ly">
-                         <div style="float:left;width:100%" class="detail_ly">
-                            <fieldset style="float:left;width:100px" class="detail">
-                                <legend>监督人</legend>
-                                <img src="img/xueba.jpg" width="100px"/><br/>
-                                <span id="supervisorName">猴小喵</span><br/>
-                            </fieldset>
-                            <fieldset style="float:left;width:210px;height:140px" class="detail taskDetail">
-                                <legend>详情</legend>
-                                <span id="taskDetailShowSpan" >我每天要很努力地背诵一百个单词</span>
-                            </fieldset>
-                        </div>
-                        <div style="float:left;width:100%" class="detail_ly">
-                            <fieldset style="float:left;width:339px" class="detail dateDeadline">
-                                <legend><h3>截止日期</h3></legend>
+                <fieldset>
+                    <legend id="taskTitle">张三的's 背诵一百个单词 计划</legend>
+                    <div style="float:left;width:100%">
+                        <fieldset style="float:left;width:100px">
+                            <legend>监督人</legend>
+                            <img src="img/xueba.jpg" width="100px"/><br/>
+                            <span id="supervisorName">猴小喵</span><br/>
+                        </fieldset>
+                        <fieldset style="float:left;width:210px;height:140px">
+                            <legend>详情</legend>
+                            <span id="taskDetailShowSpan" >我每天要很努力地背诵一百个单词</span>
+                        </fieldset>
+                    </div>
+                    <div style="float:left;width:100%">
+                        <fieldset style="float:left;width:339px">
+                            <legend>截止日期</legend>
                                 <ul id="deadlines">
 
                                 </ul>
-                            </fieldset>
-                        </div>
-                    </div>  
-                </div>
+                        </fieldset>
+                    </div>
+                    
+                </fieldset>
 
-                <fieldset class="payment_ly">
-                    <legend class="confirmTittle_ly_1"><h3>使用拖星币支付</h3></legend>
+                <fieldset>
+                    <legend class="payWayheader_ly">支付方式</legend>
+                    <div style="width:100%; border-style: solid; border-width:0px; float:left" >
+                        <div style="float:left; border-style: solid; border-width: 2px; padding: 22px" class="payWay_ly">
+                            拖星币
+                        </div>
+                        <div style="float:left; border-style: solid; border-width: 2px; padding: 22px" class="payWay_ly">
+                            支付宝
+                        </div>
+                        <div style="float:left; border-style: solid; border-width: 2px; padding: 22px;" class="payWay_ly">
+                            网  银
+                        </div>
+                        <div style="float:left; border-style: solid; border-width: 2px; padding: 22px;" class="payWay_ly">
+                            PayPal
+                        </div>
+                    </div>
+
                     <form id="payCheck">
                         如何用拖星币支付。<br/>
 
-                        拖星币，拖斯拉的货币。拖星币越多拖斯拉越开心。<br/><hr/>
+                        拖星币，拖斯拉的货币。拖星币越多拖斯拉越开心。<br/>
 
-                        购买拖星币：<a href="http://shop110739150.taobao.com/shop/view_shop.htm?spm=a1z0e.1.10010.4.MzMnnJ">拖斯拉的小门店ya</a><br/>
-                        已经购买了？为拖星币<a href="">充值</a><br/><hr/>
-                        <div class="coin">
+                        购买拖星币：<a href="">淘宝</a><br/>
+                        已经购买了？为拖星币<a href="">充值</a><br/>
                         账户余额：
-                        <span id="balanceSpan" class="num">0</span>
-                        拖星币<br/>
+                        <span id="balanceSpan">0</span>
+                        拖星币
                         本次消耗：
-                        <span id="amountSum" class="num">0</span>
+                        <span id="amountSum">0</span>
                         拖星币<br/>
-                        </div>
-                        <div class="required_ly">
-                            <span class="alertMsg" style="display:none" id="agreeRe">需要点击同意</span>
-                            <input type="checkbox" id="agreeMe"  class="required" name="agreeMe">   我同意</input>
-                            <br/>
-                        </div>
-                        </br>
-                        <input type="button" id="payQ" value="支付" class="button btn-primary btn-next">
-                        <button id="addTXB" class="button_ly">增加拖星币</button>
-                        <input type="button" id="chargeButton" class="chargeTri button btn-primary btn-next" value="充值">
-                        <input type="button" class="button btn-primary btn-next" id="modifyButton" value="返回">
+                        <input type="checkbox" id="agreeMe"  class="required" name="agreeMe">我同意</input>
+                        <span class="alertMsg" style="display:none" id="agreeRe">需要点击同意</span>
+                        <br/>
+                        <input type="button" text="" id="modifyButton" value="返回修改">
+                        <button id="addTXB">增加拖星币</button>
+                        <input type="button" id="chargeButton" class="chargeTri" value="充值">
+                        <input type="button" id="payQ" value="支付">
                     </form>
                 </fieldset>
-            </div>
-            </div>    
+                
                  <div id="clothLayer_01" class="layer_01 interactions"> 
                 </div>
-                <div class="then_ly">
-                <div id="noModification" style="display:none" class="interactions fixIt then_ly">
-                    
-                        <div class="tittleBG_ly">还要修改？</div>
-                        <div class="alertMsg_ly_1">
-                            学霸说：你妹啊，还犹豫什么！<br/>
-                            赶快行动了。今天还有:000结束！<br/>
-                        </div>
-                        <div class="button_1Position">
-                            <button id="modifyAssured" class="button_1 button btn-primary btn-next button_pay">返回修改</button>
-                            <button id="noModifyAssured" class="button_1 button btn-primary btn-next button_pay">不改了</button>
-                        </div>
-                   
+                <div id="noModification" style="display:none" class="interactions fixIt">
+                <fieldset>
+                    <legend>还要修改？</legend>
+                    学霸说：你妹啊，还犹豫什么！<br/>
+                    赶快行动了。今天还有:000结束！<br/>
+                    <button id="modifyAssured">返回修改</button><button id="noModifyAssured">不改了</button>
+                </fieldset>
                 </div>
-         
-                <div id="confirm"  style="display:none" class="interactions fixIt then_ly">
-                 <div class="tittleBG_ly">不能反悔！！！</div>
-                    <div class="alertMsg_ly_1">
-                        一旦确定的话，<br/>
-                        再！也！不！能！修！改！了！<br/>
-                        完不成任务的话，<br/>
-                        绝！对！不！会！退！钱！的！<br/>
-                    </div>
-                    <div class="button_1Position">
-                        <button id="payLater" class="button_1 button btn-primary btn-next button_pay">放弃</button>
-                        <button id="payNow" class="button_1 button btn-primary btn-next button_pay">确定</button>
-                    </div>
-                </div>
+
            
-        
-            <div class="interactions charge_ly then_ly" id="chargeLayer" style="display:none">
-                
-                    <div class="tittleBG_ly">充值</div>
-                        <span id="messgerCharge" class="alertMsg"></span><br/>
-                        
-                        <input id="cardCode" type="text" class="alertMsg"/><br/>
-                        <div class="alertMsg_ly">
-                            请输入序列号<br/>
-                            输入错误3次的话，会被禁止哦。
-                        </div>
-                        <div class="button_1Position"><button id="clearCardCode" class="button_1 button btn-primary btn-next button_pay">返回</button><button id="chargeSubmit" class="button_1 button btn-primary btn-next button_pay">充值</button></div>
-                
+                <div id="confirm"  style="display:none" class="interactions fixIt">
+                <fieldset>
+                <legend>不能反悔！！！</legend>
+                    一旦确定的话，<br/>
+                    再！也！不！能！修！改！了！<br/>
+                    完不成任务的话，<br/>
+                    绝！对！不！会！退！钱！的！<br/>
+                    <button id="payLater" class="button_1">认怂，不继续了</button><button id="payNow" class="button_1">确定！支付！！</button>
+                </fieldset>
+                </div>
             </div>
-        </div>
+            <div class="interactions charge_ly" id="chargeLayer" style="display:none">
+                <fieldset>
+                    <legend>充值</legend>
+                        <span id="messgerCharge" class="alertMsg"></span><br/>
+                        卡密：
+                        <input id="cardCode" type="text" /><br/>
+                        请直接从淘宝那里复制过来，<br/>
+                        充值失败3次的话，会被禁止哦。<br/>
+                        <button id="clearCardCode" class="button_1">放弃返回</button><button id="chargeSubmit" class="button_1">充值</button>
+                </fieldset>
+            </div>
         </div>
     </body>
 </html>
