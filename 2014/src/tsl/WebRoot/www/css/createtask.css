@@ -1,0 +1,313 @@
+.layer
+{
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	padding: 0px;
+	margin: 0px;
+	background-color: gray;
+	width:100%;
+	height:100%;
+	
+	overflow: hidden;
+	display: none;
+
+	opacity:0.5;/*其他，透明度50%*/
+
+}
+.layer_01
+{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	padding: 0px;
+	margin: 0px;
+	background-color: gray;
+	width:100%;
+	height:100%;
+	
+	overflow: hidden;
+	display: none;
+
+
+	opacity:0.5;/*其他，透明度50%*/
+
+}
+
+
+.manuX
+{
+	display:none;
+	position: absolute;
+	top: 7%;
+	padding: 0px;
+	margin: 0px;
+	background-color: white;
+	width:400px;
+	z-index: 10px;
+
+	
+	overflow: hidden;
+	display: none;
+}
+.payWay_ly
+{
+	background-color: #2f8373;
+	color: white;
+	font-size: 10px;
+	vertical-align: center;
+	width: 40px;
+	height: 3px;
+	margin: 2px;
+}
+.ui-datepicker 
+{    
+	margin-top:-0px;
+	margin-left: 150px;
+}
+.fixIt
+{
+	position: absolute;
+	top: 300px;
+	padding: 0px;
+	margin: 0px;
+	background-color: white;
+	width:400px;
+}
+.button_1
+{
+	margin:2px;
+}
+.charge_ly
+{
+	position: absolute;
+	top: 300px;
+	padding: 0px;
+	margin: 0px;
+	z-index: 20px;
+	width:400px;
+	background-color: white;
+}
+
+.alertMsg
+{
+	color: red;
+}
+
+.root{
+	width:100%;
+}
+.confirm_ly
+{
+	border:none;
+	width: 100%;
+}
+.confirmBG_ly
+{
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.confirmTittle_ly
+{
+	color: white;
+}
+.confirmTittle_ly_1
+{
+	color: #2f8373;
+}
+
+.container_manuX
+{
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.payment_ly
+{
+	border-right: none;
+	border-left: none;
+	border-bottom: none;
+	border-width: 1px;
+	border-color: #2f8373;
+}
+.button
+{
+	float: right;
+	margin: 3px;
+}
+.button {
+	display: inline-block;
+*display:inline;
+*zoom:1;
+	margin-bottom: 0;
+	font-size: 14px;
+	height: 30px;
+	line-height: 12px;
+	text-align: center;
+	cursor: pointer;
+	background-color: #fff;
+	border: 1px solid #2f8373;
+	color: #2f8373;
+	padding: 0;
+	width: 70px
+}
+.button:hover, .button:focus {
+	color: #fff;
+	outline: 0;
+	text-decoration: none;
+	background-color: #2f8373;
+	opacity:0.9;
+}
+.button.active, .button:active {
+	outline: 0;
+	background-color: #2f8373;
+	-webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15);
+	-moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15);
+	box-shadow: inset 0 2px 4px rgba(0,0,0,.15)
+}
+.button.disabled, .button[disabled] {
+	cursor: default;
+	opacity: .65;
+	filter: alpha(opacity=65);
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	color: #e5e9ec;
+	background: #ccd0d9}
+.button_ly {
+	display: inline-block;
+*display:inline;
+*zoom:1;
+	margin-top: 3px;
+	font-size: 14px;
+	height: 30px;
+	line-height: 12px;
+	text-align: center;
+	cursor: pointer;
+	background-color: #fff;
+	border: 1px solid #2f8373;
+	color: #2f8373;
+	padding: 0;
+	width: 100px;
+}
+.button_ly:hover, .button_ly:focus {
+	color: #fff;
+	outline: 0;
+	text-decoration: none;
+	background-color: #2f8373;
+	opacity:0.6;
+}
+.button_ly.active, .button_ly:active {
+	outline: 0;
+	background-color: #2f8373;
+	-webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15);
+	-moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15);
+	box-shadow: inset 0 2px 4px rgba(0,0,0,.15)
+}
+.button_ly.disabled, .button_ly[disabled] {
+	cursor: default;
+	opacity: .65;
+	filter: alpha(opacity=65);
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	color: #e5e9ec;
+	background: #ccd0d9}
+.btn-primary {
+	background-color: #2f8373;
+	border-color: #2f8373;
+	color: #fff}
+.num
+{
+	font-size: 22px;
+	font-style: bold;
+	color: #2f8373;
+}
+.coin
+{
+	font-size: 16px;
+	text-align: right;
+}
+.tittleBG
+{
+	width: 400px;
+	height: 40px;
+	background-color: #2f8373;
+	vertical-align:center;
+	padding-top: 15px;
+	padding-left: 8px;
+	position: relative;
+	top: -16px;
+}
+.tittleBG_ly
+{
+	width: 98%;
+	height: 30px;
+	background-color: #2f8373;
+	padding-top: 10px;
+	padding-left: 8px;
+	font-size: 16px;
+	color: white;
+}
+.detail_ly
+{
+	width: 400px;
+}
+.detail
+{
+	margin-left:18px;
+	margin-bottom: 18px;
+	position: relative;
+	top: -20px;
+}
+.taskDetail
+{
+	margin-left: 0px;
+}
+.dateDeadline
+{
+	color: #2f8373;
+}
+.then_ly
+{
+	width: 400px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.alertMsg
+{
+	position: relative;
+	margin-left: 50px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	width: 300px;
+	height: 40px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-color: #2f8373;
+}
+.alertMsg_ly
+{
+	margin-left: 50px;
+	margin-bottom: 30px;
+}
+.button_pay
+{
+	margin-bottom: 20px;
+}
+.button_1Position
+{
+	margin-right: 50px;
+}
+.alertMsg_ly_1
+{
+	margin-left: 90px;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+.required_ly
+{
+	float: right;
+}

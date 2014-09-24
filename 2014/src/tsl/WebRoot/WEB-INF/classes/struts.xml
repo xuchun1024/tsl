@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <package name="struts2"  extends="json-default" namespace="/">
+    	<!-- 注册 -->
+		<action name="register" class="com.tsl.action.user.RegistActon">
+		   <result name="success"  type="json">
+		       <param name="isSuccess">isSuccess</param>
+		   </result>
+		    <result name="error">/www/common/500.html</result> 
+		</action>
+
+		<!-- 登陆 -->
+		<action name="login" class="com.tsl.action.user.LoginAction">
+         <result name="success" type="json">
+		      <param name="login_success">login_success</param>
+		 </result> 
+	     <result name="password_regerror" >
+	          /www/common/password_regerror.html
+	     </result> 
+	     <result name="error">/www/common/500.html</result> 
+		</action>
+		<!-- 邮箱唯一性验证 -->
+		<action name="valid" class="com.tsl.action.user.ValidEmailAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+			<result name="error">/www/common/500.html</result> 
+		</action>
+	</package>
+</struts>
