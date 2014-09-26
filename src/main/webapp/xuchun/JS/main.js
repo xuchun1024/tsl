@@ -39,7 +39,7 @@ function postData(){
     var jsonStr = encoded;  
     var actionStr = $("#actionPath").val();  
     $.ajax({  
-        url : "http://211.155.86.32:8081/tosla/user/save",  
+        url : "/mysite/user/save",  
         type : 'POST',  
         data : jsonStr,  
         dataType : 'json',  
